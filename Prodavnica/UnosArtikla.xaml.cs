@@ -21,5 +21,10 @@ namespace Prodavnica
         {
             InitializeComponent();
         }
+
+        private void buttonCancel(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

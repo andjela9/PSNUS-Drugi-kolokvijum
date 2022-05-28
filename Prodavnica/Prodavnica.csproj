@@ -7,7 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="povrce.jpg" />
+    <None Remove="sauces-in-asian-grocery-store-vertical-768x1024.jpg" />
+    <None Remove="transkomJpg.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="transkomJpg.jpg" />
   </ItemGroup>
 
 </Project>

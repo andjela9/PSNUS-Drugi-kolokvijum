@@ -7,7 +7,52 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height ="4*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="3" Fill="#ffec01"  />
+        <Rectangle Grid.Column="0" Grid.RowSpan="3" Fill="#ffec01"  />
+        <Rectangle Grid.Column="2" Grid.RowSpan="3" Fill="#ffec01"  />
+        <Rectangle Grid.Row="2" Grid.ColumnSpan="3" Fill="#ffec01"  />
+        <Image Grid.Row="0" Source="/transkomJpg.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"  />
+
+        <DataGrid Name="artikliGrid" SelectedItem="{Binding SelectedArtikal}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False"  Grid.Row="1" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}"/>
+                <DataGridTextColumn Header="Sektor"  />
+                <DataGridTextColumn Header="BarKod" Binding="{Binding Barkod}"/>
+                <DataGridTextColumn Header="Cena" Binding="{Binding Cena}"/>
+                <DataGridTextColumn Header="Porez" Binding="{Binding Porez}"/>
+
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Background="LightBlue" Content="R" Height="30" Width="30" Click="DetailsBtn_Click"/>
+                                <Button Background="LightGreen" Content="U" Height="30" Width="30" Click="UpdateBtn_Click"/>
+                                <Button Background="OrangeRed" Content="D" Height="30" Width="30" Click="DeleteBtn_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+                
+            
+            
+            
+        </DataGrid>
+
+
+
+
 
     </Grid>
 </Window>
