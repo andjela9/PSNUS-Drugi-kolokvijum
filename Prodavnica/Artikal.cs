@@ -6,6 +6,7 @@ namespace Prodavnica
 {
     class Artikal
     {
+        private string naziv;
         private string proizvodjac;
         private double cena;
         private int barKod;
@@ -20,7 +21,10 @@ namespace Prodavnica
         
 
         #region Geteri
-
+        public string getNaziv()
+        {
+            return naziv;
+        }
         public double getCena()
         {
             return cena;
