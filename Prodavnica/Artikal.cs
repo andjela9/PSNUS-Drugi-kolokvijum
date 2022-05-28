@@ -6,15 +6,18 @@ namespace Prodavnica
 {
     class Artikal
     {
+        private string proizvodjac;
         private double cena;
         private int barKod;
         private double porez;
-        private double pdv;
+        private double akciza;
         private string poreklo;
         private bool vegan;
         private bool maloletni;
         private double carina;
         private bool osnovnaNamirnica;
+        private int rokTrajanja;
+        
 
         #region Geteri
 
@@ -30,9 +33,9 @@ namespace Prodavnica
         {
             return porez;
         }
-        public double getPdv()
+        public double getAkciza()
         {
-            return pdv;
+            return akciza;
         }
         public string getPoreklo()
         {
@@ -53,6 +56,14 @@ namespace Prodavnica
         public bool getOsnovnaNamirnica()
         {
             return osnovnaNamirnica;
+        }
+        public string getProizvodjac()
+        {
+            return proizvodjac;
+        }
+        public int getRokTrajanja() 
+        {
+            return rokTrajanja;
         }
 
 
