@@ -1,0 +1,83 @@
+﻿<Window x:Class="Prodavnica.UnosArtikla"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prodavnica"
+        mc:Ignorable="d"
+        Title="UnosArtikla" Height="800" Width="500">
+    <Grid>
+        <!--#region Definisanje grida-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <!--#region Prva kolona -->
+        <Rectangle Grid.Row="0" Fill="#7CFC00" Grid.ColumnSpan="3" />
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Unos novog artikla" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3" FontWeight="Bold"/>
+
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Naziv" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="Proizvodjac" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="Cena" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="Barkod" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="5" Text="Porez" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="6" Text="Akciza" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="7" Text="Poreklo" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="8" Text="Vegan" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="9" Text="Da li je za maloletne?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="10" Text="Carina" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="11" Text="Da li je osnovna namirnica?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="12" Text="Rok trajanja" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Column="0" Grid.Row="13" Name="cancel"  Margin="10" Click="buttonCancel">Cancel</Button>
+        <!--#endregion-->
+        <!--#region Druga kolona-->
+        <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="naziv" Margin="15"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Name="proizvodjac"  Margin="15"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="cena"  Margin="15" />
+        <TextBlock Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="barkod"  Margin="15" />
+        <TextBlock Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="porez"  Margin="15" />
+        <TextBlock Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="akciza"  Margin="15" />
+        <TextBlock Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="poreklo"  Margin="15" />
+        <StackPanel Grid.Column="1" Grid.Row="8" Margin="15">
+            <RadioButton Content="da" Name="VeganDa" VerticalAlignment="Center"/>
+            <RadioButton Content="ne" Name="VeganNe" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="9" Margin="15">
+            <RadioButton Content="da" Name="maloletniDa" VerticalAlignment="Center"/>
+            <RadioButton Content="ne" Name="maloletniNe" VerticalAlignment="Center"/>
+        </StackPanel>
+        <TextBlock Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="carina"  Margin="15" />
+        <StackPanel Grid.Column="1" Grid.Row="11" Margin="15">
+            <RadioButton Content="da" Name="OsnovnaDa" VerticalAlignment="Center"/>
+            <RadioButton Content="ne" Name="OsnovnaNe" VerticalAlignment="Center"/>
+        </StackPanel>
+        <TextBlock Grid.Column="1" Grid.Row="12" VerticalAlignment="Center" Name="rokTrajanja"  Margin="15" />
+        <Button Grid.Column="1" Grid.Row="13" Name="confirm"  Margin="10" Grid.ColumnSpan="2" Click="buttonConfirm">Confirm</Button>
+        <!--#endregion-->
+        <!--#region Treca kolona-->
+        <TextBlock Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Text="RSD" Margin="15"/>
+        <TextBlock Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Text="%" Margin="15"/>
+        <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center" Text="%" Margin="15"/>
+        <TextBlock Grid.Column="2" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center" Text="%" Margin="15"/>
+        <TextBlock Grid.Column="2" Grid.Row="12" VerticalAlignment="Center" HorizontalAlignment="Center" Text="dan(a)" Margin="15"/>
+        <!--#endregion-->
+    </Grid>
+</Window>

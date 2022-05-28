@@ -17,6 +17,20 @@ namespace Prodavnica
         private string bojaUniforme;
         private int zaposlenihUSmeni;
 
+        public Sektor(string naziv, int brojZaposlenih, double povrsina, int maxBrojArtikala, int sifraSektora, double plata, int brFrizidera, int brojMenadzera, string bojaUniforme, int zaposlenihUSmeni)
+        {
+            this.naziv = naziv;
+            this.brojZaposlenih = brojZaposlenih;
+            this.povrsina = povrsina;
+            this.maxBrojArtikala = maxBrojArtikala;
+            this.sifraSektora = sifraSektora;
+            this.plata = plata;
+            this.brFrizidera = brFrizidera;
+            this.brojMenadzera = brojMenadzera;
+            this.bojaUniforme = bojaUniforme;
+            this.zaposlenihUSmeni = zaposlenihUSmeni;
+        }
+
         #region Geteri
         public string getNaziv()
         {

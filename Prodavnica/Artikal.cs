@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Prodavnica
 {
-    class Artikal
+    public class Artikal : INotifyPropertyChanged
     {
         private string naziv;
         private string proizvodjac;
@@ -18,60 +19,163 @@ namespace Prodavnica
         private double carina;
         private bool osnovnaNamirnica;
         private int rokTrajanja;
+
+        public Artikal(string naziv, string proizvodjac, double cena, int barKod, double porez, double akciza, string poreklo, bool vegan, bool maloletni, double carina, bool osnovnaNamirnica, int rokTrajanja)
+        {
+            this.naziv = naziv;
+            this.proizvodjac = proizvodjac;
+            this.cena = cena;
+            this.barKod = barKod;
+            this.porez = porez;
+            this.akciza = akciza;
+            this.poreklo = poreklo;
+            this.vegan = vegan;
+            this.maloletni = maloletni;
+            this.carina = carina;
+            this.osnovnaNamirnica = osnovnaNamirnica;
+            this.rokTrajanja = rokTrajanja;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        #region Geteri i seteri
+        public string Naziv
+        {
+            get { return naziv; }
+            set
+            {
+                naziv = value;
+                OnPropertyChanged("Naziv");
+            }
+            
+        }
         
-
-        #region Geteri
-        public string getNaziv()
+        public double Cena
         {
-            return naziv;
+            get { return cena; }
+            set
+            {
+                cena = value;
+                OnPropertyChanged("Cena");
+            }
         }
-        public double getCena()
+        public int BarKod
         {
-            return cena;
-        }
-        public int getBarKod()
+            get {  return barKod; }
+            set
+            {
+                barKod = value;
+                OnPropertyChanged("BarKod");
+            }
+         }
+        public double Porez
         {
-            return barKod;
+            get { return porez; }
+            set
+            {
+                porez = value;
+                OnPropertyChanged("Porez");
+            }
         }
-        public double getPorez()
+        public double Akciza
         {
-            return porez;
+            get { return akciza; }
+            set
+            {
+                akciza = value;
+                OnPropertyChanged("Akciza");
+            }
         }
-        public double getAkciza()
+        public string Poreklo
         {
-            return akciza;
+            get { return poreklo; }
+            set
+            {
+                poreklo = value;
+                OnPropertyChanged("Poreklo");
+            }
         }
-        public string getPoreklo()
+        public bool Vegan
         {
-            return poreklo;
-        }
-        public bool getVegan()
+            get
+            {
+                return vegan;
+            }
+            set
+            {
+                vegan = value;
+                OnPropertyChanged("Vegan");
+            }
+         }
+        public bool Maloletni
         {
-            return vegan;
-        }
-        public bool getMaloletni()
+            get
+            {
+                return maloletni;
+            }
+            set
+            {
+                maloletni = value;
+                OnPropertyChanged("Maloletni");
+            }
+         }
+        public double Carina
         {
-            return maloletni;
-        }
-        public double getCarina()
+            get
+            {
+                return carina;
+            }
+            set
+            {
+                carina = value;
+                OnPropertyChanged("Carina");
+            }
+         }
+        public bool OsnovnaNamirnica
         {
-            return carina;
-        }
-        public bool getOsnovnaNamirnica()
+            get
+            {
+                return osnovnaNamirnica;
+            }
+            set
+            {
+                osnovnaNamirnica = value;
+                OnPropertyChanged("OsnovnaNamirnica");
+            }
+         }
+        public string Proizvodjac
         {
-            return osnovnaNamirnica;
-        }
-        public string getProizvodjac()
+            get
+            {
+                return proizvodjac;
+            }
+            set
+            {
+                proizvodjac = value;
+                OnPropertyChanged("Proizvodjac");
+            }
+         }
+        public int RokTrajanja
         {
-            return proizvodjac;
-        }
-        public int getRokTrajanja() 
-        {
-            return rokTrajanja;
-        }
-
-
+            get
+            {
+                return rokTrajanja;
+            }
+            set
+            {
+                rokTrajanja = value;
+                OnPropertyChanged("RokTrajanja");
+            }
+         }
         #endregion 
+
+        public void OnPropertyChanged(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
+
+        
 
     }
 }
