@@ -21,5 +21,11 @@ namespace Prodavnica
         {
             InitializeComponent();
         }
+        
+        private void buttonUredu(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

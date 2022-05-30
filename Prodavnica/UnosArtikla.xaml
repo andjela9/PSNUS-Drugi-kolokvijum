@@ -50,27 +50,27 @@
         <Button Grid.Column="0" Grid.Row="13" Name="cancel" BorderBrush="#FFFF5718"  Background="#FFFF5718"  Margin="10" Click="buttonCancel">Poništi</Button>
         <!--#endregion-->
         <!--#region Druga kolona-->
-        <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="naziv" Margin="15"/>
-        <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Name="proizvodjac"  Margin="15"/>
-        <TextBlock Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="cena"  Margin="15" />
-        <TextBlock Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="barkod"  Margin="15" />
-        <TextBlock Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="porez"  Margin="15" />
-        <TextBlock Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="akciza"  Margin="15" />
-        <TextBlock Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="poreklo"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="nazivTxt" Margin="15" Text="{Binding Path= Naziv}"/>
+        <TextBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Name="proizvodjacTxt" Text="{Binding Path= Proizvodjac}" Margin="15"/>
+        <TextBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="cenaTxt" Text="{Binding Path= Cena}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="barkodTxt" Text="{Binding Path= BarKod}"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="porezTxt" Text="{Binding Path= Porez}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="akcizaTxt" Text="{Binding Path= Akciza}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="porekloTxt" Text="{Binding Path= Poreklo}"  Margin="15" />
         <StackPanel Grid.Column="1" Grid.Row="8" Margin="15">
-            <RadioButton Content="da" Name="VeganDa" VerticalAlignment="Center"/>
-            <RadioButton Content="ne" Name="VeganNe" VerticalAlignment="Center"/>
+            <RadioButton Content="da" Name="VeganDa" VerticalAlignment="Center" />
+            <RadioButton Content="ne" Name="VeganNe" VerticalAlignment="Center" />
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="9" Margin="15">
             <RadioButton Content="da" Name="maloletniDa" VerticalAlignment="Center"/>
             <RadioButton Content="ne" Name="maloletniNe" VerticalAlignment="Center"/>
         </StackPanel>
-        <TextBlock Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="carina"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="carinaTxt" Text="{Binding Path= Carina}" Margin="15" />
         <StackPanel Grid.Column="1" Grid.Row="11" Margin="15">
             <RadioButton Content="da" Name="OsnovnaDa" VerticalAlignment="Center"/>
             <RadioButton Content="ne" Name="OsnovnaNe" VerticalAlignment="Center"/>
         </StackPanel>
-        <TextBlock Grid.Column="1" Grid.Row="12" VerticalAlignment="Center" Name="rokTrajanja"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="12" VerticalAlignment="Center" Name="rokTrajanjaTxt" Text="{Binding Path= RokTrajanja}" Margin="15" />
         <Button Grid.Column="1" Grid.Row="13" Name="confirm" BorderBrush="#7CFC00"  Background="#7CFC00" Margin="10" Grid.ColumnSpan="2"  Click="buttonConfirm">Potvrdi</Button>
         <!--#endregion-->
         <!--#region Treca kolona-->

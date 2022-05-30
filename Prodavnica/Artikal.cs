@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Prodavnica
@@ -17,7 +18,7 @@ namespace Prodavnica
         private bool vegan;
         private bool maloletni;
         private double carina;
-        private bool osnovnaNamirnica;
+        private bool osnovnaNamirnica; 
         private int rokTrajanja;
 
         public Artikal(string naziv, string proizvodjac, double cena, int barKod, double porez, double akciza, string poreklo, bool vegan, bool maloletni, double carina, bool osnovnaNamirnica, int rokTrajanja)
@@ -35,11 +36,13 @@ namespace Prodavnica
             this.osnovnaNamirnica = osnovnaNamirnica;
             this.rokTrajanja = rokTrajanja;
         }
-
+        public Artikal() { }
         public event PropertyChangedEventHandler PropertyChanged;
 
 
         #region Geteri i seteri
+
+        [Key]
         public string Naziv
         {
             get { return naziv; }

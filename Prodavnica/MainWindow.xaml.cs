@@ -55,5 +55,16 @@ namespace Prodavnica
             }
 
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ArtikalContext.Instance.Dispose();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            UnosArtikla unosArtikla = new UnosArtikla();
+            unosArtikla.ShowDialog();
+        }
     }
 }
