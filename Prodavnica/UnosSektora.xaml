@@ -1,0 +1,69 @@
+﻿<Window x:Class="Prodavnica.Prozori_xaml.UnosSektora"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prodavnica.Prozori_xaml"
+        mc:Ignorable="d"
+        Title="UnosSektora" Height="800" Width="500">
+    <Grid>
+        <!--#region Definisanje grida-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.3* "/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <!--#region Prva kolona -->
+        <Rectangle Grid.Row="0" Fill="#89CFF0" Grid.ColumnSpan="3" />
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Unos novog sektora" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3" FontWeight="Bold"/>
+
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Naziv" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="ID sektora" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="Povrsina" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="Maksimalni broj artikala" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="5" Text="Broj zaposlenih" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="6" Text="Plata" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="7" Text="Broj frizidera" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="8" Text="Broj menadzera" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="9" Text="Boja uniforme" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="10" Text="Zaposlenih u smeni" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+       
+        <Rectangle Grid.Row="13"  Grid.ColumnSpan="3" Fill="LightGray" />
+        <Button Grid.Column="0" Grid.Row="13" Name="cancel" BorderBrush="#FFFF5718"  Background="#FFFF5718"  Margin="10" Click="buttonCancel_Click">Poništi</Button>
+        <!--#endregion-->
+        <!--#region Druga kolona-->
+        <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="nazivTxt" Margin="15" Text="{Binding Path= Naziv}"/>
+        <TextBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Name="idSektoraTxt" Text="{Binding Path= Proizvodjac}" Margin="15"/>
+        <TextBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="povrsinaTxt" Text="{Binding Path= Cena}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="maxBrArtikalaTxt" Text="{Binding Path= BarKod}"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="brZaposlenihTxt" Text="{Binding Path= Porez}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="plataTxt" Text="{Binding Path= Akciza}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="brFrizideraTxt" Text="{Binding Path= Poreklo}"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="brMenadzeraTxt" Text="{Binding Path= Poreklo}"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="bojaUniformeTxt" Text="{Binding Path= Poreklo}"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="zaposlenihUSmeniTxt" Text="{Binding Path= Carina}" Margin="15" />
+        <Button Grid.Column="1" Grid.Row="13" Name="confirm" BorderBrush="#7CFC00"  Background="#7CFC00" Margin="10" Grid.ColumnSpan="2"  Click="buttonConfirm_Click">Potvrdi</Button>
+        <!--#endregion-->
+        <!--#region Treca kolona-->
+
+        <TextBlock Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Text="m^2" Margin="15"/>
+        <TextBlock Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Text="kom" Margin="15"/>
+        <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center" Text="RSD" Margin="15"/>
+        <!--#endregion-->
+    </Grid>
+</Window>

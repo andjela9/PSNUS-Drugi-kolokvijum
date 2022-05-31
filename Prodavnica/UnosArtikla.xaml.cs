@@ -26,12 +26,12 @@ namespace Prodavnica
             
         }
 
-        private void buttonConfirm(object sender, RoutedEventArgs e)
+        private void buttonConfirm_Click(object sender, RoutedEventArgs e)
         {
             if (ValidateInput())
             {
-                ArtikalContext.Instance.Artikli.Add(noviArtikal);
-                ArtikalContext.Instance.SaveChanges();
+                ArtikalSektorContext.Instance.Artikli.Add(noviArtikal);
+                ArtikalSektorContext.Instance.SaveChanges();
                 this.Close();
             }
             else
@@ -39,7 +39,7 @@ namespace Prodavnica
                 MessageBox.Show("Greska u unosu", "Greska", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        private void buttonCancel(object sender, RoutedEventArgs e)
+        private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

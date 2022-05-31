@@ -9,23 +9,23 @@ namespace Prodavnica
     public class Sektor
     {
         private string nazivSektora;
-        private int brojZaposlenihSektora;
+        private int idSektora;
         private double povrsinaSektora;
         private int maxBrojArtikalaSektora;
-        private int idSektora;
+        private int brojZaposlenihSektora;
         private double plataSektora;
         private int brFrizideraSektora;
         private int brojMenadzeraSektora;
         private string bojaUniformeSektora;
         private int zaposlenihUSmeniSektora;
 
-        public Sektor(string naziv, int brojZaposlenih, double povrsina, int maxBrojArtikala, int sifraSektora, double plata, int brFrizidera, int brojMenadzera, string bojaUniforme, int zaposlenihUSmeni)
+        public Sektor(string naziv, int brojZaposlenih, double povrsina, int maxBrojArtikala, int idSektora, double plata, int brFrizidera, int brojMenadzera, string bojaUniforme, int zaposlenihUSmeni)
         {
             this.nazivSektora = naziv;
             this.brojZaposlenihSektora = brojZaposlenih;
             this.povrsinaSektora = povrsina;
             this.maxBrojArtikalaSektora = maxBrojArtikala;
-            this.idSektora = sifraSektora;
+            this.idSektora = idSektora;
             this.plataSektora = plata;
             this.brFrizideraSektora = brFrizidera;
             this.brojMenadzeraSektora = brojMenadzera;
@@ -34,8 +34,9 @@ namespace Prodavnica
         }
         public Sektor() { }
         public event PropertyChangedEventHandler PropertyChanged;
-        #region Geteri
+        #region Geteri i seteri
 
+        [Key]
         public string NazivSektora
         {
             get
@@ -94,7 +95,7 @@ namespace Prodavnica
                 OnPropertyChanged("MaxBrojArtikalaSektora");
             }
         }
-        public int SifraSektora
+        public int IdSektora
         {
             get
             {
@@ -103,7 +104,7 @@ namespace Prodavnica
             set
             {
                 idSektora = value;
-                OnPropertyChanged("SifraSektora");
+                OnPropertyChanged("IdSektora");
             }
         }
         public double PlataSektora

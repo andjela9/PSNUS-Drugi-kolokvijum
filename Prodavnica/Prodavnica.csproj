@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Prozori xaml\**" />
+    <EmbeddedResource Remove="Prozori xaml\**" />
+    <None Remove="Prozori xaml\**" />
+    <Page Remove="Prozori xaml\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Model\SektorContext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="povrce.jpg" />
     <None Remove="sauces-in-asian-grocery-store-vertical-768x1024.jpg" />
     <None Remove="transkomJpg.jpg" />

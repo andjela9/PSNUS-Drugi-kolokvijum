@@ -53,6 +53,7 @@ namespace Prodavnica
             }
             
         }
+        //TODO za sektor
         
         public double Cena
         {

@@ -10,22 +10,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Prodavnica
+namespace Prodavnica.Prozori_xaml
 {
     /// <summary>
-    /// Interaction logic for ReadArtikla.xaml
+    /// Interaction logic for ReadSektora.xaml
     /// </summary>
-    public partial class ReadArtikla : Window
+    public partial class ReadSektora : Window
     {
-        public ReadArtikla()
+        
+        public ReadSektora()
         {
             InitializeComponent();
         }
-        
-        private void buttonUredu_Click(object sender, RoutedEventArgs e)
+
+        private void uRedu_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-    }
+    }    
 }
