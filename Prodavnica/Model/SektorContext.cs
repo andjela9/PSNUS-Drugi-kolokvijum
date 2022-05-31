@@ -5,27 +5,24 @@ using System.Text;
 
 namespace Prodavnica
 {
-    public class ArtikalContext : DbContext
+    public class SektorContext : DbContext
     {
-        private static ArtikalContext instance;
-        public static ArtikalContext Instance
+        private static SektorContext instance;
+        public static SektorContext Instance
         {
             get
             {
                 if(instance == null)
                 {
-                    instance = new ArtikalContext();
+                    instance = new SektorContext();
                 }
                 return instance;
             }
         }
-        private ArtikalContext()
-        {
 
-        }
-        public DbSet<Artikal> Artikli { get; set; }
+        private SektorContext() { }
 
 
-
+        public DbSet<Sektor> Sektori { get; set; }
     }
 }

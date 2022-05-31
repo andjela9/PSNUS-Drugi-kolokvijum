@@ -8,51 +8,90 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition />
             <RowDefinition Height ="4*"/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="0.2*"/>
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Row="0" Grid.ColumnSpan="3" Fill="#ffec01"  />
         <Rectangle Grid.Column="0" Grid.RowSpan="3" Fill="#ffec01"  />
         <Rectangle Grid.Column="2" Grid.RowSpan="3" Fill="#ffec01"  />
         <Rectangle Grid.Row="2" Grid.ColumnSpan="3" Fill="#ffec01"  />
-        <Image Grid.Row="0" Source="/transkomJpg.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"  />
+        <Image Grid.Row="0" Source="/transkomJpg.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
 
-        <DataGrid Name="artikliGrid" SelectedItem="{Binding SelectedArtikal}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False"  Grid.Row="1" Grid.Column="1">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}"/>
-                <DataGridTextColumn Header="Sektor"  />
-                <DataGridTextColumn Header="BarKod" Binding="{Binding Barkod}"/>
-                <DataGridTextColumn Header="Cena" Binding="{Binding Cena}"/>
-                <DataGridTextColumn Header="Porez" Binding="{Binding Porez}"/>
+        <TabControl Grid.Row="1" Grid.Column="1">
+            <TabItem Header="Artikli"  Background="#019741">
+                <Grid>
+                    <DataGrid Name="artikliGrid" SelectedItem="{Binding SelectedArtikal}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False"  Grid.Row="1" Grid.Column="1" Margin="0, 0, 0, 40" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}" Width="1*"/>
+                            <DataGridTextColumn Header="Sektor"  Width="1*"/>
+                            <DataGridTextColumn Header="Bar kod" Binding="{Binding Barkod}" Width="1*"/>
+                            <DataGridTextColumn Header="Cena" Binding="{Binding Cena}" Width="1*"/>
+                            <DataGridTextColumn Header="Porez" Binding="{Binding Porez}" Width="1*"/>
 
-                <DataGridTemplateColumn Width="*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Button Background="LightBlue" Content="R" Height="30" Width="30" Click="DetailsBtn_Click"/>
-                                <Button Background="LightGreen" Content="U" Height="30" Width="30" Click="UpdateBtn_Click"/>
-                                <Button Background="OrangeRed" Content="D" Height="30" Width="30" Click="DeleteBtn_Click"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="1*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Button Background="LightBlue" Content="R" Height="30" Width="30" Click="DetailsBtn_Click"/>
+                                            <Button Background="LightGreen" Content="U" Height="30" Width="30" Click="UpdateBtn_Click"/>
+                                            <Button Background="OrangeRed" Content="D" Height="30" Width="30" Click="DeleteBtn_Click"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
 
-            </DataGrid.Columns>
-                
-            
-            
-            
-        </DataGrid>
+                        </DataGrid.Columns>
+                    </DataGrid>
 
+                    <Button Content="Dodaj artikal" Background="#019741"   Click="DodajArtikal_Click" Margin="634,250,10,10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                </Grid>
 
 
 
+            </TabItem>
+            <TabItem Header="Sektori" Background="#019741">
+                <!--#region  OVDE ZA SEKTORE IZGLED-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="16*"/>
+                        <ColumnDefinition Width="48*"/>
+                        <ColumnDefinition Width="657*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Name="sektoriGrid" SelectedItem="{Binding SelectedArtikal}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" Margin="0, 0, 0, 40" Grid.ColumnSpan="3" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}" Width="1*"/>
+                            <DataGridTextColumn Header="Sifra sektora"  Width="1*"/>
+                            <DataGridTextColumn Header="Broj zaposlenih" Binding="{Binding Barkod}" Width="1*"/>
+                            <DataGridTextColumn Header="Zaposlenih po smeni" Binding="{Binding Cena}" Width="1*"/>
+                            <DataGridTextColumn Header="Plata" Binding="{Binding Porez}" Width="1*"/>
+
+                            <DataGridTemplateColumn Width="1*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Button Background="LightBlue" Content="R" Height="30" Width="30" Click="DetailsBtnSektor_Click"/>
+                                            <Button Background="LightGreen" Content="U" Height="30" Width="30" Click="UpdateBtnSektor_Click" />
+                                            <Button Background="OrangeRed" Content="D" Height="30" Width="30" Click="DeleteBtnSektor_Click" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button Content="Dodaj sektor" Background="#019741" Click="DodajArtikal_Click" Margin="0,0,10,10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="2"/>
+                </Grid>
+
+            </TabItem>
+
+        </TabControl>
 
     </Grid>
 </Window>

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="transkomJpg.jpg" />
+    <SplashScreen Include="transkomJpg.jpg" />
   </ItemGroup>
 
 </Project>

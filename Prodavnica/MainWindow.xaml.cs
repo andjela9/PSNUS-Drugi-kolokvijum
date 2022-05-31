@@ -22,12 +22,18 @@ namespace Prodavnica
     public partial class MainWindow : Window
     {
         public Artikal SelectedArtikal { get; set; }
+        public Sektor SelectedSektor { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-            ArtikalContext.Instance.Artikli.Load();
-            artikliGrid.ItemsSource = ArtikalContext.Instance.Artikli.Local;
+            ArtikalContext.Instance.Artikli.Load();             //da je sigurno da je poslednja verzija iz baze
+            artikliGrid.ItemsSource = ArtikalContext.Instance.Artikli.Local;            //iz entity frameworka
             this.DataContext = this;
+            //load sektora isto ovako
+
+            //LoadData();
+
+            //view - SQL server object explorer
             
         }
         private void DetailsBtn_Click(object sender, RoutedEventArgs e)
@@ -65,6 +71,25 @@ namespace Prodavnica
         {
             UnosArtikla unosArtikla = new UnosArtikla();
             unosArtikla.ShowDialog();
+        }
+
+        private void DodajArtikal_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void DetailsBtnSektor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateBtnSektor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteBtnSektor_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
