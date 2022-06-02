@@ -47,16 +47,16 @@
         <Button Grid.Column="0" Grid.Row="13" Name="cancel" BorderBrush="#FFFF5718"  Background="#FFFF5718"  Margin="10" Click="buttonCancel_Click">Poništi</Button>
         <!--#endregion-->
         <!--#region Druga kolona-->
-        <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="nazivTxt" Margin="15" Text="{Binding Path= Naziv}"/>
-        <TextBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Name="idSektoraTxt" Text="{Binding Path= Proizvodjac}" Margin="15"/>
-        <TextBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="povrsinaTxt" Text="{Binding Path= Cena}" Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="maxBrArtikalaTxt" Text="{Binding Path= BarKod}"  Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="brZaposlenihTxt" Text="{Binding Path= Porez}" Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="plataTxt" Text="{Binding Path= Akciza}" Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="brFrizideraTxt" Text="{Binding Path= Poreklo}"  Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="brMenadzeraTxt" Text="{Binding Path= Poreklo}"  Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="bojaUniformeTxt" Text="{Binding Path= Poreklo}"  Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="zaposlenihUSmeniTxt" Text="{Binding Path= Carina}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="nazivTxt" Margin="15" Text="{Binding Path= NazivSektora}"/>
+        <TextBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Name="idSektoraTxt" Text="{Binding Path= IdSektora}" Margin="15"/>
+        <TextBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="povrsinaTxt" Text="{Binding Path= PovrsinaSektora}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="maxBrArtikalaTxt" Text="{Binding Path= MaxBrojArtikalaSektora}"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="brZaposlenihTxt" Text="{Binding Path= BrojZaposlenihSektora}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="plataTxt" Text="{Binding Path= PlataSektora}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="brFrizideraTxt" Text="{Binding Path= BrFrizideraSektora}"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="brMenadzeraTxt" Text="{Binding Path= BrojMenadzeraSektora}"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="bojaUniformeTxt" Text="{Binding Path= BojaUniforme}"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="zaposlenihUSmeniTxt" Text="{Binding Path= ZaposlenihUSmeni}" Margin="15" />
         <Button Grid.Column="1" Grid.Row="13" Name="confirm" BorderBrush="#7CFC00"  Background="#7CFC00" Margin="10" Grid.ColumnSpan="2"  Click="buttonConfirm_Click">Potvrdi</Button>
         <!--#endregion-->
         <!--#region Treca kolona-->

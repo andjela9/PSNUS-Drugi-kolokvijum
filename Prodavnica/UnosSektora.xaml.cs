@@ -25,12 +25,16 @@ namespace Prodavnica.Prozori_xaml
 
         private void buttonConfirm_Click(object sender, RoutedEventArgs e)
         {
+            //MessageBox.Show("DEBUG PRE VALIDACIJE", "DEBUG PRE VALIDACIJE", MessageBoxButton.OK, MessageBoxImage.Error);            //OVDE UDJE
             if (ValidateInput())
             {
+                MessageBox.Show("DEBUG U IF", "DEBUG U IF", MessageBoxButton.OK, MessageBoxImage.Error);                //OVDE UDJE
                 ArtikalSektorContext.Instance.Sektori.Add(noviSektor);
-                ArtikalSektorContext.Instance.SaveChanges();
+                MessageBox.Show("DEBUG POSLE ADD", "DEBUG POSLE ADD", MessageBoxButton.OK, MessageBoxImage.Error);         //OVDE UDJE
+                ArtikalSektorContext.Instance.SaveChanges();                //OVDE PUKNE
+                MessageBox.Show("DEBUG POSLE SAVE CHANGES", "DEBUG POSLE SAVE CHANGES", MessageBoxButton.OK, MessageBoxImage.Error);
                 this.Close();
-                MessageBox.Show("DEBUG", "DEBUG", MessageBoxButton.OK, MessageBoxImage.Error);
+                
             }
             else
             {

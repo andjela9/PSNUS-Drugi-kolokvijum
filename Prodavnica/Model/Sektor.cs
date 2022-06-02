@@ -116,7 +116,7 @@ namespace Prodavnica
             set
             {
                 plataSektora = value;
-                OnPropertyChanged("Plata");
+                OnPropertyChanged("PlataSektora");
             }
         }
         public int BrFrizideraSektora
@@ -128,7 +128,7 @@ namespace Prodavnica
             set
             {
                 brFrizideraSektora = value;
-                OnPropertyChanged("BrFrizidera");
+                OnPropertyChanged("BrFrizideraSektora");
             }
         }
         public string BojaUniforme
@@ -152,7 +152,7 @@ namespace Prodavnica
             set
             {
                 zaposlenihUSmeniSektora = value;
-                OnPropertyChanged("ZaposlenihUSmeniSektora");
+                OnPropertyChanged("ZaposlenihUSmeni");
             }
         }
         #endregion

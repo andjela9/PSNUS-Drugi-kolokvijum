@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <None Remove="povrce.jpg" />
+    <None Remove="read.webp" />
     <None Remove="sauces-in-asian-grocery-store-vertical-768x1024.jpg" />
     <None Remove="transkomJpg.jpg" />
   </ItemGroup>
