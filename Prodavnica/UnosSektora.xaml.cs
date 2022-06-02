@@ -21,6 +21,7 @@ namespace Prodavnica.Prozori_xaml
         public UnosSektora()
         {
             InitializeComponent();
+            this.DataContext = noviSektor;
         }
 
         private void buttonConfirm_Click(object sender, RoutedEventArgs e)
@@ -28,11 +29,11 @@ namespace Prodavnica.Prozori_xaml
             //MessageBox.Show("DEBUG PRE VALIDACIJE", "DEBUG PRE VALIDACIJE", MessageBoxButton.OK, MessageBoxImage.Error);            //OVDE UDJE
             if (ValidateInput())
             {
-                MessageBox.Show("DEBUG U IF", "DEBUG U IF", MessageBoxButton.OK, MessageBoxImage.Error);                //OVDE UDJE
+                //MessageBox.Show("DEBUG U IF", "DEBUG U IF", MessageBoxButton.OK, MessageBoxImage.Error);                //OVDE UDJE
                 ArtikalSektorContext.Instance.Sektori.Add(noviSektor);
-                MessageBox.Show("DEBUG POSLE ADD", "DEBUG POSLE ADD", MessageBoxButton.OK, MessageBoxImage.Error);         //OVDE UDJE
+               // MessageBox.Show("DEBUG POSLE ADD", "DEBUG POSLE ADD", MessageBoxButton.OK, MessageBoxImage.Error);         //OVDE UDJE
                 ArtikalSektorContext.Instance.SaveChanges();                //OVDE PUKNE
-                MessageBox.Show("DEBUG POSLE SAVE CHANGES", "DEBUG POSLE SAVE CHANGES", MessageBoxButton.OK, MessageBoxImage.Error);
+                //MessageBox.Show("DEBUG POSLE SAVE CHANGES", "DEBUG POSLE SAVE CHANGES", MessageBoxButton.OK, MessageBoxImage.Error);
                 this.Close();
                 
             }
@@ -305,21 +306,24 @@ namespace Prodavnica.Prozori_xaml
                 }
             }
 
-            // validacija polja zaposlenih u smeni
-            if (String.IsNullOrWhiteSpace(zaposlenihUSmeniTxt.Text))
+            //boja uniforme
+            if (String.IsNullOrWhiteSpace(bojaUniformeTxt.Text))
             {
-                zaposlenihUSmeniTxt.BorderBrush = Brushes.Red;
+                bojaUniformeTxt.BorderBrush = Brushes.Red;
                 //indexValTxt.Visibility = Visibility.Visible;
 
                 retVal = false;
             }
             else
             {
-                zaposlenihUSmeniTxt.ClearValue(Border.BorderBrushProperty);
+                bojaUniformeTxt.ClearValue(Border.BorderBrushProperty);
                 //indexValTxt.Visibility = Visibility.Hidden;
             }
 
-            // validacija polja broj menadzera
+
+
+
+            // validacija polja broj zaposlenih u smeni
             if (String.IsNullOrWhiteSpace(zaposlenihUSmeniTxt.Text))
             {
                 //zaposlenihUSmeniTxt.Text = "Required field!";
@@ -330,7 +334,7 @@ namespace Prodavnica.Prozori_xaml
             else
             {
                 int zaposlenihUSmeni;
-                if (Int32.TryParse(brMenadzeraTxt.Text, out zaposlenihUSmeni))
+                if (Int32.TryParse(zaposlenihUSmeniTxt.Text, out zaposlenihUSmeni))
                 {
                     if (zaposlenihUSmeni <= 0)
                     {

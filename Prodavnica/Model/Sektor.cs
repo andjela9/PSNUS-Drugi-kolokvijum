@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Prodavnica
 {
-    public class Sektor
+    public class Sektor : INotifyPropertyChanged
     {
         private string nazivSektora;
         private int idSektora;

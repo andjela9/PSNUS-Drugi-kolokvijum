@@ -29,7 +29,7 @@ namespace Prodavnica
             InitializeComponent();
             ArtikalSektorContext.Instance.Artikli.Load();             //da je sigurno da je poslednja verzija iz baze
             artikliGrid.ItemsSource = ArtikalSektorContext.Instance.Artikli.Local;            //iz entity frameworka
-            this.DataContext = this;
+            //this.DataContext = this;
 
             ArtikalSektorContext.Instance.Sektori.Load();
             sektoriGrid.ItemsSource = ArtikalSektorContext.Instance.Sektori.Local;
