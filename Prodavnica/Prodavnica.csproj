@@ -18,7 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="icons8-delete-24.png" />
+    <None Remove="icons8-edit-24.png" />
     <None Remove="icons8-info-24 - Copy.png" />
+    <None Remove="icons8-info-24.png" />
     <None Remove="info2.png" />
     <None Remove="info3.png" />
     <None Remove="povrce.jpg" />

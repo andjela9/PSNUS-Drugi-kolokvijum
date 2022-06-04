@@ -44,7 +44,9 @@ namespace Prodavnica
         private void DetailsBtn_Click(object sender, RoutedEventArgs e)
         {
             // TODO: napraviti lepsi prozor i otvoriti ga sa popunjenim podacima o studentu
-            MessageBox.Show(SelectedArtikal.ToString(), "Details");
+            ReadArtikla readArtikla = new ReadArtikla(SelectedArtikal);
+            readArtikla.ShowDialog();
+            //MessageBox.Show(SelectedArtikal.ToString(), "Details");
         }
 
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)

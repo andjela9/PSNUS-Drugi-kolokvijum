@@ -17,9 +17,10 @@ namespace Prodavnica
     /// </summary>
     public partial class ReadArtikla : Window
     {
-        public ReadArtikla()
+        public ReadArtikla(Artikal artikal)
         {
             InitializeComponent();
+            this.DataContext = artikal;
         }
         
         private void buttonUredu_Click(object sender, RoutedEventArgs e)

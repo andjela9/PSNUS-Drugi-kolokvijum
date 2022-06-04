@@ -16,6 +16,7 @@ namespace Prodavnica
         private double akciza;
         private string poreklo;
         private bool vegan;
+        
         private bool maloletni;
         private double carina;
         private bool osnovnaNamirnica; 
@@ -31,6 +32,7 @@ namespace Prodavnica
             this.akciza = akciza;
             this.poreklo = poreklo;
             this.vegan = vegan;
+            
             this.maloletni = maloletni;
             this.carina = carina;
             this.osnovnaNamirnica = osnovnaNamirnica;
@@ -73,6 +75,18 @@ namespace Prodavnica
                 OnPropertyChanged("BarKod");
             }
          }
+
+        public bool Vegan
+        {
+            get { return vegan; }
+            set
+            {
+                vegan = value;
+                OnPropertyChanged("Vegan");
+            }
+        }
+
+    
         public double Porez
         {
             get { return porez; }
@@ -100,18 +114,7 @@ namespace Prodavnica
                 OnPropertyChanged("Poreklo");
             }
         }
-        public bool Vegan
-        {
-            get
-            {
-                return vegan;
-            }
-            set
-            {
-                vegan = value;
-                OnPropertyChanged("Vegan");
-            }
-         }
+        
         public bool Maloletni
         {
             get

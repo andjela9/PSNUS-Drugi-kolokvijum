@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prodavnica"
         mc:Ignorable="d"
-        Title="UnosArtikla" Height="800" Width="500">
+        Title="UnosArtikla" Height="900" Width="500">
     <Grid>
         <!--#region Definisanje grida-->
         <Grid.ColumnDefinitions>
@@ -61,8 +61,8 @@
         <TextBox Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="akcizaTxt" Text="{Binding Path= Akciza}" Margin="15" />
         <TextBox Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="porekloTxt" Text="{Binding Path= Poreklo}"  Margin="15" />
         <StackPanel Grid.Column="1" Grid.Row="9" Margin="15">
-            <RadioButton Content="da" Name="VeganDa" VerticalAlignment="Center" />
-            <RadioButton Content="ne" Name="VeganNe" VerticalAlignment="Center" />
+            <RadioButton  Content="da" Name="VeganDa" VerticalAlignment="Center" />
+            <RadioButton  Content="ne" Name="VeganNe" VerticalAlignment="Center" />
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="10" Margin="15">
             <RadioButton Content="da" Name="maloletniDa" VerticalAlignment="Center"/>
