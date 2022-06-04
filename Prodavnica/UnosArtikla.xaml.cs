@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,34 +19,39 @@ namespace Prodavnica
     public partial class UnosArtikla : Window
     {
         private Artikal noviArtikal = new Artikal();
-        private bool IsUpdate { get; set; }
-        public UnosArtikla(Artikal updateArtikal)
+        public bool IsUpdate { get; set; }
+        public UnosArtikla(Artikal unetArtikal)
         {
             InitializeComponent();
 
 
-            if(updateArtikal != null)
+            if(unetArtikal != null)
             {
                 //deep copy
-                noviArtikal.Naziv = updateArtikal.Naziv;
-                noviArtikal.BarKod = updateArtikal.BarKod;
-                noviArtikal.Akciza = updateArtikal.Akciza;
-                noviArtikal.Carina = updateArtikal.Carina;
-                noviArtikal.Cena = updateArtikal.Cena;
-                noviArtikal.Maloletni = updateArtikal.Maloletni;
-                noviArtikal.OsnovnaNamirnica = updateArtikal.OsnovnaNamirnica;
-                noviArtikal.Poreklo = updateArtikal.Poreklo;
-                noviArtikal.Porez = updateArtikal.Porez;
-                noviArtikal.Proizvodjac = updateArtikal.Proizvodjac;
-                noviArtikal.Vegan = updateArtikal.Vegan;
-                noviArtikal.RokTrajanja = updateArtikal.RokTrajanja;
+                noviArtikal.Naziv = unetArtikal.Naziv;
+                noviArtikal.BarKod = unetArtikal.BarKod;
+                noviArtikal.Akciza = unetArtikal.Akciza;
+                noviArtikal.Carina = unetArtikal.Carina;
+                noviArtikal.Cena = unetArtikal.Cena;
+                noviArtikal.Maloletni = unetArtikal.Maloletni;
+                noviArtikal.OsnovnaNamirnica = unetArtikal.OsnovnaNamirnica;
+                noviArtikal.Poreklo = unetArtikal.Poreklo;
+                noviArtikal.Porez = unetArtikal.Porez;
+                noviArtikal.Proizvodjac = unetArtikal.Proizvodjac;
+                noviArtikal.Vegan = unetArtikal.Vegan;
+                noviArtikal.RokTrajanja = unetArtikal.RokTrajanja;
 
                 AddOrUpdate.Title = "Update artikla";
                 IsUpdate = true;
+                nazivTxt.IsReadOnly = true;
+                Zaglavlje.Text = "Update postojeceg artikla";
             }
             else
             {
+                AddOrUpdate.Title = "Dodavanje novog artikla";
+                nazivTxt.IsReadOnly = false;
                 IsUpdate = false;
+                Zaglavlje.Text = "Unos novog artikla";
             }
 
 
@@ -62,14 +68,30 @@ namespace Prodavnica
             {
                 if (IsUpdate)
                 {
+                    Artikal updateArtikal = ArtikalSektorContext.Instance.Artikli.SingleOrDefault(art => art.Naziv == noviArtikal.Naziv);               //onaj objekat ciji je naziv isti
+                    if(updateArtikal != null)
+                    {
+                        updateArtikal.Naziv = noviArtikal.Naziv;
+                        updateArtikal.BarKod = noviArtikal.BarKod;
+                        updateArtikal.Akciza = noviArtikal.Akciza;
+                        updateArtikal.Carina = noviArtikal.Carina;
+                        updateArtikal.Cena = noviArtikal.Cena;
+                        updateArtikal.Maloletni = noviArtikal.Maloletni;
+                        updateArtikal.OsnovnaNamirnica = noviArtikal.OsnovnaNamirnica;
+                        updateArtikal.Poreklo = noviArtikal.Poreklo;
+                        updateArtikal.Porez = noviArtikal.Porez;
+                        updateArtikal.Proizvodjac = noviArtikal.Proizvodjac;
+                        updateArtikal.Vegan = noviArtikal.Vegan;
+                        updateArtikal.RokTrajanja = noviArtikal.RokTrajanja;
 
+                        ArtikalSektorContext.Instance.Entry(updateArtikal).State = System.Data.Entity.EntityState.Modified;     //da se zna da je apdejtovano stanje objekta unutar baze
+                    }
                 }
                 else
                 {
-
+                    ArtikalSektorContext.Instance.Artikli.Add(noviArtikal);
                 }
 
-                ArtikalSektorContext.Instance.Artikli.Add(noviArtikal);
                 ArtikalSektorContext.Instance.SaveChanges();
                 this.Close();
             }
