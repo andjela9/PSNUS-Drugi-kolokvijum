@@ -38,13 +38,15 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Button Click="DetailsBtn_Click" Height="24" Width="24" ToolTip="Info"  >
-                                                <WrapPanel>
-                                                    <Image Source="/Slike1/info.png" />
-                                                </WrapPanel>
+                                            <Button Click="DetailsBtn_Click" Height="30" Width="30" ToolTip="Info" Background="White" >
+                                                <Image Source="D:\Automatika\VI semestar\SCADA\projekat\Prodavnica\Prodavnica\info.png"/>
                                             </Button>
-                                            <Button Background="LightGreen" Content="U" Height="24" Width="24" ToolTip="Update" Click="UpdateBtn_Click"/>
-                                            <Button Background="OrangeRed" Content="D" Height="24" Width="24" ToolTip="Delete" Click="DeleteBtn_Click"/>
+                                            <Button Height="30" Width="30" ToolTip="Update" Click="UpdateBtn_Click" Background="White">
+                                                <Image Source="D:\Automatika\VI semestar\SCADA\projekat\Prodavnica\Prodavnica\editPlavi.png"/>
+                                            </Button>
+                                            <Button Height="30" Width="30" ToolTip="Delete" Click="DeleteBtn_Click" Background="White">
+                                                <Image Source="D:\Automatika\VI semestar\SCADA\projekat\Prodavnica\Prodavnica\delete.png"/>
+                                            </Button>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -79,11 +81,17 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Button Background="LightBlue"  Height="30" Width="30"  ToolTip="Read"  Click="DetailsBtnSektor_Click">
-                                                <Image Source="d:\automatika\vi semestar\scada\projekat\prodavnica\prodavnica\read.webp"/>
+                                            <Button Height="30" Width="30"  ToolTip="Read"  Click="DetailsBtnSektor_Click" Background="White">
+                                                <Image Source="D:\Automatika\VI semestar\SCADA\projekat\Prodavnica\Prodavnica\info.png"/>
                                             </Button>
-                                            <Button Background="LightGreen" Content="U" Height="30" Width="30" ToolTip="Update" Click="UpdateBtnSektor_Click" />
-                                            <Button Background="OrangeRed" Content="D" Height="30" Width="30" ToolTip="Delete" Click="DeleteBtnSektor_Click" />
+                                            <Button Height="30" Width="30" ToolTip="Update" Click="UpdateBtnSektor_Click" Background="White" >
+                                                <Image Source="D:\Automatika\VI semestar\SCADA\projekat\Prodavnica\Prodavnica\editPlavi.png" />
+                                            </Button>
+
+                                            <Button Height="30" Width="30" ToolTip="Delete" Click="DeleteBtnSektor_Click" Background="White">
+                                                <Image Source="D:\Automatika\VI semestar\SCADA\projekat\Prodavnica\Prodavnica\delete.png" />
+                                            </Button>
+
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
