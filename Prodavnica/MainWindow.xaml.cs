@@ -52,7 +52,10 @@ namespace Prodavnica
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
             // TODO: ovo nije realna implementacija, treba implementirati funkcionalni prozor i logiku za update
-            MessageBox.Show(SelectedArtikal.ToString(), "Update");
+            //MessageBox.Show(SelectedArtikal.ToString(), "Update");
+
+            UnosArtikla updateArtikla = new UnosArtikla(SelectedArtikal);
+            updateArtikla.ShowDialog();
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
@@ -76,7 +79,7 @@ namespace Prodavnica
 
         private void DodajArtikal_Click(object sender, RoutedEventArgs e)
         {
-            UnosArtikla unosArtikla = new UnosArtikla();
+            UnosArtikla unosArtikla = new UnosArtikla(null);
             unosArtikla.ShowDialog();
         }
 

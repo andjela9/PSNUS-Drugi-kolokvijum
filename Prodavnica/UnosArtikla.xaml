@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prodavnica"
         mc:Ignorable="d"
-        Title="UnosArtikla" Height="900" Width="500">
+        Name="AddOrUpdate" Title="UnosArtikla" Height="900" Width="500">
     <Grid>
         <!--#region Definisanje grida-->
         <Grid.ColumnDefinitions>
@@ -33,7 +33,7 @@
         <!--#endregion-->
         <!--#region Prva kolona -->
         <Rectangle Grid.Row="0" Fill="#89CFF0" Grid.ColumnSpan="3" />
-        <TextBlock Grid.Column="0" Grid.Row="0" Text="Unos novog artikla" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3" FontWeight="Bold"/>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Podaci artikla" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3" FontWeight="Bold"/>
 
         <TextBlock Grid.Column="0" Grid.Row="1" Text="Naziv" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="2" Text="Sektor" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -52,28 +52,28 @@
         <Button Grid.Column="0" Grid.Row="14" Name="cancel" BorderBrush="#FFFF5718"  Background="#FFFF5718"  Margin="10" Click="buttonCancel_Click">Poništi</Button>
         <!--#endregion-->
         <!--#region Druga kolona-->
-        <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="nazivTxt" Margin="15" Text="{Binding Path= Naziv}"/>
+        <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="nazivTxt" Margin="15" ToolTip="Unesite naziv artikla" Text="{Binding Path= Naziv}" IsReadOnly="{Binding IsUpdate}"/>
         <ComboBox Grid.Row="2" Grid.Column="1" Name="SektorComboBox" Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="proizvodjacTxt" Text="{Binding Path= Proizvodjac}" Margin="15"/>
-        <TextBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="cenaTxt" Text="{Binding Path= Cena}" Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="barkodTxt" Text="{Binding Path= BarKod}"  Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="porezTxt" Text="{Binding Path= Porez}" Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="akcizaTxt" Text="{Binding Path= Akciza}" Margin="15" />
-        <TextBox Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="porekloTxt" Text="{Binding Path= Poreklo}"  Margin="15" />
-        <StackPanel Grid.Column="1" Grid.Row="9" Margin="15">
-            <RadioButton  Content="da" Name="VeganDa" VerticalAlignment="Center" />
-            <RadioButton  Content="ne" Name="VeganNe" VerticalAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="proizvodjacTxt" ToolTip="Unesite ime proizvodjaca" Text="{Binding Path= Proizvodjac}" Margin="15"/>
+        <TextBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="cenaTxt" ToolTip="Unesite cenu kao pozitivan broj" Text="{Binding Path= Cena}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="barkodTxt" ToolTip="Unesite barkod kao celobrojnu vrednost" Text="{Binding Path= BarKod}"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="porezTxt" ToolTip="Unesite porez kao pozitivan broj" Text="{Binding Path= Porez}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="akcizaTxt" ToolTip="Unesite akcizu kao pozitivan broj" Text="{Binding Path= Akciza}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="porekloTxt" ToolTip="Unesite poreklo proizvoda" Text="{Binding Path= Poreklo}"  Margin="15" />
+        <StackPanel Grid.Column="1" Grid.Row="9" Margin="15" Tag="{Binding Path=Vegan}" Name="StackPanelVegan">
+            <RadioButton  Content="da" Name="VeganDa" VerticalAlignment="Center" IsChecked="{Binding Path= Vegan}"/>
+            <RadioButton  Content="ne" Name="VeganNe" VerticalAlignment="Center" IsChecked="{Binding Path= Vegan}" />
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="10" Margin="15">
             <RadioButton Content="da" Name="maloletniDa" VerticalAlignment="Center"/>
             <RadioButton Content="ne" Name="maloletniNe" VerticalAlignment="Center"/>
         </StackPanel>
-        <TextBox Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" Name="carinaTxt" Text="{Binding Path= Carina}" Margin="15" />
-        <StackPanel Grid.Column="1" Grid.Row="12" Margin="15">
+        <TextBox Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" Name="carinaTxt" ToolTip="Unesite procenat carine kao pozitivan broj" Text="{Binding Path= Carina}" Margin="15" />
+        <StackPanel Grid.Column="1" Grid.Row="12" Margin="15" >
             <RadioButton Content="da" Name="OsnovnaDa" VerticalAlignment="Center"/>
             <RadioButton Content="ne" Name="OsnovnaNe" VerticalAlignment="Center"/>
         </StackPanel>
-        <TextBox Grid.Column="1" Grid.Row="13" VerticalAlignment="Center" Name="rokTrajanjaTxt" Text="{Binding Path= RokTrajanja}" Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="13" VerticalAlignment="Center" Name="rokTrajanjaTxt" ToolTip="Unesite rok trajanja kao celobrojnu vrednost" Text="{Binding Path= RokTrajanja}" Margin="15" />
         <Button Grid.Column="1" Grid.Row="14" Name="confirm" BorderBrush="#7CFC00"  Background="#7CFC00" Margin="10" Grid.ColumnSpan="2"  Click="buttonConfirm_Click">Potvrdi</Button>
         <!--#endregion-->
         <!--#region Treca kolona-->

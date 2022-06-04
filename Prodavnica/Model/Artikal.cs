@@ -16,7 +16,6 @@ namespace Prodavnica
         private double akciza;
         private string poreklo;
         private bool vegan;
-        
         private bool maloletni;
         private double carina;
         private bool osnovnaNamirnica; 

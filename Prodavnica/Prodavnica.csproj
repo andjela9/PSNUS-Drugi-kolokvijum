@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="Prozori xaml\**" />
+    <Compile Remove="Slike\**" />
     <EmbeddedResource Remove="Prozori xaml\**" />
+    <EmbeddedResource Remove="Slike\**" />
     <None Remove="Prozori xaml\**" />
+    <None Remove="Slike\**" />
     <Page Remove="Prozori xaml\**" />
+    <Page Remove="Slike\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,12 +22,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="delete.png" />
+    <None Remove="edit.png" />
     <None Remove="icons8-delete-24.png" />
     <None Remove="icons8-edit-24.png" />
     <None Remove="icons8-info-24 - Copy.png" />
     <None Remove="icons8-info-24.png" />
+    <None Remove="info.png" />
     <None Remove="info2.png" />
     <None Remove="info3.png" />
+    <None Remove="Model\infoJpg.jpg" />
     <None Remove="povrce.jpg" />
     <None Remove="read.webp" />
     <None Remove="sauces-in-asian-grocery-store-vertical-768x1024.jpg" />

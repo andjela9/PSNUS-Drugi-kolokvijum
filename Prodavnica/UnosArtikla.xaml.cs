@@ -18,11 +18,41 @@ namespace Prodavnica
     public partial class UnosArtikla : Window
     {
         private Artikal noviArtikal = new Artikal();
-
-        public UnosArtikla()
+        private bool IsUpdate { get; set; }
+        public UnosArtikla(Artikal updateArtikal)
         {
             InitializeComponent();
+
+
+            if(updateArtikal != null)
+            {
+                //deep copy
+                noviArtikal.Naziv = updateArtikal.Naziv;
+                noviArtikal.BarKod = updateArtikal.BarKod;
+                noviArtikal.Akciza = updateArtikal.Akciza;
+                noviArtikal.Carina = updateArtikal.Carina;
+                noviArtikal.Cena = updateArtikal.Cena;
+                noviArtikal.Maloletni = updateArtikal.Maloletni;
+                noviArtikal.OsnovnaNamirnica = updateArtikal.OsnovnaNamirnica;
+                noviArtikal.Poreklo = updateArtikal.Poreklo;
+                noviArtikal.Porez = updateArtikal.Porez;
+                noviArtikal.Proizvodjac = updateArtikal.Proizvodjac;
+                noviArtikal.Vegan = updateArtikal.Vegan;
+                noviArtikal.RokTrajanja = updateArtikal.RokTrajanja;
+
+                AddOrUpdate.Title = "Update artikla";
+                IsUpdate = true;
+            }
+            else
+            {
+                IsUpdate = false;
+            }
+
+
             this.DataContext = noviArtikal;
+
+
+            //this.departmentCombo.ItemsScource = new List<string> {"DA", "NE"};
             
         }
 
@@ -30,6 +60,15 @@ namespace Prodavnica
         {
             if (ValidateInput())
             {
+                if (IsUpdate)
+                {
+
+                }
+                else
+                {
+
+                }
+
                 ArtikalSektorContext.Instance.Artikli.Add(noviArtikal);
                 ArtikalSektorContext.Instance.SaveChanges();
                 this.Close();
@@ -75,6 +114,14 @@ namespace Prodavnica
                 proizvodjacTxt.ClearValue(Border.BorderBrushProperty);
                 //firstNameValTxt.Visibility = Visibility.Hidden;
             }
+
+           // if(VeganDa.IsChecked == false && VeganNe.IsChecked == false)
+           // {
+            //    VeganDa.BorderBrush = Brushes.Red;
+            //    VeganNe.BorderBrush = Brushes.Red;
+                
+            //    retVal = false;
+           // }
 
             //validacija polja cena
             if (String.IsNullOrWhiteSpace(cenaTxt.Text))
