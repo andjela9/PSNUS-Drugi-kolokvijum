@@ -38,11 +38,11 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Button  Height="30" Width="30" ToolTip="Read" Click="DetailsBtn_Click">
-                                                <Image Source="/info3.png" />
+                                            <Button Click="DetailsBtn_Click" Height="24" Width="24" ToolTip="Update"  >
+                                                <Image Source="/icons8-info-24.png" />
                                             </Button>
-                                            <Button Background="LightGreen" Content="U" Height="30" Width="30" ToolTip="Update" Click="UpdateBtn_Click"/>
-                                            <Button Background="OrangeRed" Content="D" Height="30" Width="30" ToolTip="Delete" Click="DeleteBtn_Click"/>
+                                            <Button Background="LightGreen" Content="U" Height="24" Width="24" ToolTip="Update" Click="UpdateBtn_Click"/>
+                                            <Button Background="OrangeRed" Content="D" Height="24" Width="24" ToolTip="Delete" Click="DeleteBtn_Click"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>

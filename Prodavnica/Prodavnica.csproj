@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="icons8-info-24 - Copy.png" />
+    <None Remove="info2.png" />
+    <None Remove="info3.png" />
     <None Remove="povrce.jpg" />
     <None Remove="read.webp" />
     <None Remove="sauces-in-asian-grocery-store-vertical-768x1024.jpg" />
