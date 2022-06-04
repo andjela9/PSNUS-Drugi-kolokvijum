@@ -18,9 +18,10 @@ namespace Prodavnica.Prozori_xaml
     public partial class ReadSektora : Window
     {
         
-        public ReadSektora()
+        public ReadSektora(Sektor sektor)
         {
             InitializeComponent();
+            this.DataContext = sektor;
         }
 
         private void uRedu_Click(object sender, RoutedEventArgs e)

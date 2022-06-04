@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,29 +19,86 @@ namespace Prodavnica.Prozori_xaml
     public partial class UnosSektora : Window
     {
         private Sektor noviSektor = new Sektor();
-        public UnosSektora()
+        public bool IsUpdate { get; set; }
+        public UnosSektora(Sektor unetSektor)
         {
             InitializeComponent();
+
+
+            if (unetSektor != null)
+            {
+                //deep copy
+                noviSektor.BojaUniforme = unetSektor.BojaUniforme;
+                noviSektor.BrFrizideraSektora = unetSektor.BrFrizideraSektora;
+                noviSektor.BrojMenadzeraSektora = unetSektor.BrojMenadzeraSektora;
+                noviSektor.BrojZaposlenihSektora = unetSektor.BrojZaposlenihSektora;
+                noviSektor.IdSektora = unetSektor.IdSektora;
+                noviSektor.MaxBrojArtikalaSektora = unetSektor.MaxBrojArtikalaSektora;
+                noviSektor.NazivSektora = unetSektor.NazivSektora;
+                noviSektor.PlataSektora = unetSektor.PlataSektora;
+                noviSektor.PovrsinaSektora = unetSektor.PovrsinaSektora;
+                noviSektor.ZaposlenihUSmeni = unetSektor.ZaposlenihUSmeni;
+                
+
+                AddOrUpdate.Title = "Update sektora";
+                IsUpdate = true;
+                nazivTxt.IsReadOnly = true;
+                Zaglavlje.Text = "Update postojeceg sektora";
+            }
+            else
+            {
+                AddOrUpdate.Title = "Dodavanje novog sektora";
+                nazivTxt.IsReadOnly = false;
+                IsUpdate = false;
+                Zaglavlje.Text = "Unos novog sektora";
+            }
+
+
             this.DataContext = noviSektor;
         }
 
         private void buttonConfirm_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("DEBUG PRE VALIDACIJE", "DEBUG PRE VALIDACIJE", MessageBoxButton.OK, MessageBoxImage.Error);            //OVDE UDJE
+            
             if (ValidateInput())
             {
-                //MessageBox.Show("DEBUG U IF", "DEBUG U IF", MessageBoxButton.OK, MessageBoxImage.Error);                //OVDE UDJE
-                ArtikalSektorContext.Instance.Sektori.Add(noviSektor);
-               // MessageBox.Show("DEBUG POSLE ADD", "DEBUG POSLE ADD", MessageBoxButton.OK, MessageBoxImage.Error);         //OVDE UDJE
-                ArtikalSektorContext.Instance.SaveChanges();                //OVDE PUKNE
-                //MessageBox.Show("DEBUG POSLE SAVE CHANGES", "DEBUG POSLE SAVE CHANGES", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                if (IsUpdate)
+                {
+                    Sektor updateSektor = ArtikalSektorContext.Instance.Sektori.SingleOrDefault(skt => skt.NazivSektora == noviSektor.NazivSektora);
+                    if(updateSektor != null)
+                    {
+                        updateSektor.BojaUniforme = noviSektor.BojaUniforme;
+                        updateSektor.BrFrizideraSektora = noviSektor.BrFrizideraSektora;
+                        updateSektor.BrojMenadzeraSektora = noviSektor.BrojMenadzeraSektora;
+                        updateSektor.BrojZaposlenihSektora = noviSektor.BrojZaposlenihSektora;
+                        updateSektor.IdSektora = noviSektor.IdSektora;
+                        updateSektor.MaxBrojArtikalaSektora = noviSektor.MaxBrojArtikalaSektora;
+                        updateSektor.NazivSektora = noviSektor.NazivSektora;
+                        updateSektor.PlataSektora = noviSektor.PlataSektora;
+                        updateSektor.PovrsinaSektora = noviSektor.PovrsinaSektora;
+                        updateSektor.ZaposlenihUSmeni = noviSektor.ZaposlenihUSmeni;
+
+                        ArtikalSektorContext.Instance.Entry(updateSektor).State = System.Data.Entity.EntityState.Modified;
+                    }
+                }
+                else
+                {
+                    ArtikalSektorContext.Instance.Sektori.Add(noviSektor);
+                }
+                ArtikalSektorContext.Instance.SaveChanges();
                 this.Close();
+                
                 
             }
             else
             {
                 MessageBox.Show("Greska u unosu", "Greska", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
+            ArtikalSektorContext.Instance.SaveChanges();
+            this.Close();
+
         }
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {

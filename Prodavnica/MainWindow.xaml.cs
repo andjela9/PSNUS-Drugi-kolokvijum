@@ -43,17 +43,12 @@ namespace Prodavnica
         }
         private void DetailsBtn_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: napraviti lepsi prozor i otvoriti ga sa popunjenim podacima o studentu
             ReadArtikla readArtikla = new ReadArtikla(SelectedArtikal);
             readArtikla.ShowDialog();
-            //MessageBox.Show(SelectedArtikal.ToString(), "Details");
         }
 
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: ovo nije realna implementacija, treba implementirati funkcionalni prozor i logiku za update
-            //MessageBox.Show(SelectedArtikal.ToString(), "Update");
-
             UnosArtikla updateArtikla = new UnosArtikla(SelectedArtikal);
             updateArtikla.ShowDialog();
         }
@@ -86,12 +81,14 @@ namespace Prodavnica
        
         private void DetailsBtnSektor_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(SelectedSektor.ToString(), "Details");
+            ReadSektora readSektora = new ReadSektora(SelectedSektor);
+            readSektora.ShowDialog();
         }
 
         private void UpdateBtnSektor_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(SelectedSektor.ToString(), "Update");
+            UnosSektora updateSektora = new UnosSektora(SelectedSektor);
+            updateSektora.ShowDialog();
         }
 
         private void DeleteBtnSektor_Click(object sender, RoutedEventArgs e)
@@ -109,7 +106,7 @@ namespace Prodavnica
 
         private void DodajSektor_Click(object sender, RoutedEventArgs e)
         {
-            UnosSektora unosSektora = new UnosSektora();
+            UnosSektora unosSektora = new UnosSektora(null);
             unosSektora.ShowDialog();
         }
     }

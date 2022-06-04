@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prodavnica.Prozori_xaml"
         mc:Ignorable="d"
-        Title="UnosSektora" Height="800" Width="500">
+        Name="AddOrUpdate" Title="UnosSektora" Height="800" Width="500">
     <Grid>
         <!--#region Definisanje grida-->
         <Grid.ColumnDefinitions>
@@ -30,7 +30,7 @@
         <!--#endregion-->
         <!--#region Prva kolona -->
         <Rectangle Grid.Row="0" Fill="#89CFF0" Grid.ColumnSpan="3" />
-        <TextBlock Grid.Column="0" Grid.Row="0" Text="Unos novog sektora" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3" FontWeight="Bold"/>
+        <TextBlock Grid.Column="0" Grid.Row="0" Name="Zaglavlje" Text="Unos novog sektora" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3" FontWeight="Bold"/>
 
         <TextBlock Grid.Column="0" Grid.Row="1" Text="Naziv" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="2" Text="ID sektora" VerticalAlignment="Center" HorizontalAlignment="Center"/>
