@@ -23,9 +23,9 @@ namespace Prodavnica
         public UnosArtikla(Artikal unetArtikal)
         {
             InitializeComponent();
+            
 
-
-            if(unetArtikal != null)
+            if (unetArtikal != null)
             {
                 //deep copy
                 noviArtikal.Naziv = unetArtikal.Naziv;
@@ -38,7 +38,7 @@ namespace Prodavnica
                 noviArtikal.Poreklo = unetArtikal.Poreklo;
                 noviArtikal.Porez = unetArtikal.Porez;
                 noviArtikal.Proizvodjac = unetArtikal.Proizvodjac;
-                noviArtikal.Vegan = unetArtikal.Vegan;
+                noviArtikal.Posno = unetArtikal.Posno;
                 noviArtikal.RokTrajanja = unetArtikal.RokTrajanja;
 
                 AddOrUpdate.Title = "Update artikla";
@@ -56,10 +56,13 @@ namespace Prodavnica
 
 
             this.DataContext = noviArtikal;
+            this.posnoCombo.ItemsSource = new List<String> { "DA", "NE", "NEPOZNATO"};
+            this.maloletniCombo.ItemsSource = new List<String> { "DA", "NE" };
+            this.osnovnaNamirnicaCombo.ItemsSource = new List<String> { "DA", "NE" };
 
 
-            //this.departmentCombo.ItemsScource = new List<string> {"DA", "NE"};
-            
+
+
         }
 
         private void buttonConfirm_Click(object sender, RoutedEventArgs e)
@@ -81,7 +84,7 @@ namespace Prodavnica
                         updateArtikal.Poreklo = noviArtikal.Poreklo;
                         updateArtikal.Porez = noviArtikal.Porez;
                         updateArtikal.Proizvodjac = noviArtikal.Proizvodjac;
-                        updateArtikal.Vegan = noviArtikal.Vegan;
+                        updateArtikal.Posno = noviArtikal.Posno;
                         updateArtikal.RokTrajanja = noviArtikal.RokTrajanja;
 
                         ArtikalSektorContext.Instance.Entry(updateArtikal).State = System.Data.Entity.EntityState.Modified;     //da se zna da je apdejtovano stanje objekta unutar baze
@@ -92,7 +95,15 @@ namespace Prodavnica
                     ArtikalSektorContext.Instance.Artikli.Add(noviArtikal);
                 }
 
-                ArtikalSektorContext.Instance.SaveChanges();
+                try
+                {
+                    ArtikalSektorContext.Instance.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Unet je artikal sa istim nazivom. Artikal nece biti dodat!", "Greska", MessageBoxButton.OK, MessageBoxImage.Error);
+                    
+                }
                 this.Close();
             }
             else
@@ -144,6 +155,41 @@ namespace Prodavnica
                 
             //    retVal = false;
            // }
+
+            //validacija posno
+            if(posnoCombo.SelectedIndex == -1)
+            {
+                retVal = false;
+                //posnoCombo.BorderBrush = Brushes.Red;
+                posnoCombo.ClearValue(Border.BorderBrushProperty);
+            }
+            else
+            {
+                //posnoCombo.BorderBrush = Brushes.Black;
+                posnoCombo.ClearValue(Border.BorderBrushProperty);
+            }
+
+            //validacija maloletni
+            if (maloletniCombo.SelectedIndex == -1)
+            {
+                retVal = false;
+                maloletniCombo.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                posnoCombo.BorderBrush = Brushes.Black;
+            }
+
+            //validacija osnovna namirnica
+            if (osnovnaNamirnicaCombo.SelectedIndex == -1)
+            {
+                retVal = false;
+                osnovnaNamirnicaCombo.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                osnovnaNamirnicaCombo.BorderBrush = Brushes.Black;
+            }
 
             //validacija polja cena
             if (String.IsNullOrWhiteSpace(cenaTxt.Text))

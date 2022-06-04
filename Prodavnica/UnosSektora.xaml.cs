@@ -55,6 +55,7 @@ namespace Prodavnica.Prozori_xaml
 
 
             this.DataContext = noviSektor;
+            
         }
 
         private void buttonConfirm_Click(object sender, RoutedEventArgs e)
@@ -96,8 +97,6 @@ namespace Prodavnica.Prozori_xaml
                 MessageBox.Show("Greska u unosu", "Greska", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            ArtikalSektorContext.Instance.SaveChanges();
-            this.Close();
 
         }
         private void buttonCancel_Click(object sender, RoutedEventArgs e)

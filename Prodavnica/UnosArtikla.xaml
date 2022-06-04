@@ -43,7 +43,7 @@
         <TextBlock Grid.Column="0" Grid.Row="6" Text="Porez" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="7" Text="Akciza" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="8" Text="Poreklo" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="9" Text="Vegan" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="9" Text="Posno" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="10" Text="Da li je za maloletne?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="11" Text="Carina" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="12" Text="Da li je osnovna namirnica?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -60,19 +60,10 @@
         <TextBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="porezTxt" ToolTip="Unesite porez kao pozitivan broj" Text="{Binding Path= Porez}" Margin="15" />
         <TextBox Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="akcizaTxt" ToolTip="Unesite akcizu kao pozitivan broj" Text="{Binding Path= Akciza}" Margin="15" />
         <TextBox Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="porekloTxt" ToolTip="Unesite poreklo proizvoda" Text="{Binding Path= Poreklo}"  Margin="15" />
-        <StackPanel Grid.Column="1" Grid.Row="9" Margin="15" Tag="{Binding Path=Vegan}" Name="StackPanelVegan">
-            <RadioButton  Content="da" Name="VeganDa" VerticalAlignment="Center" IsChecked="{Binding Path= Vegan}"/>
-            <RadioButton  Content="ne" Name="VeganNe" VerticalAlignment="Center" IsChecked="{Binding Path= Vegan}" />
-        </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="10" Margin="15">
-            <RadioButton Content="da" Name="maloletniDa" VerticalAlignment="Center"/>
-            <RadioButton Content="ne" Name="maloletniNe" VerticalAlignment="Center"/>
-        </StackPanel>
+        <ComboBox Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="posnoCombo" ToolTip="Da li je proizvod posni/veganski" SelectedItem="{Binding Path=Posno}" Margin="15"/>
+        <ComboBox Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="maloletniCombo" ToolTip="Da li se sme prodavati maloletnima (npr. alkohol)?" SelectedItem="{Binding Path=Maloletni}"  Margin="15"/>
         <TextBox Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" Name="carinaTxt" ToolTip="Unesite procenat carine kao pozitivan broj" Text="{Binding Path= Carina}" Margin="15" />
-        <StackPanel Grid.Column="1" Grid.Row="12" Margin="15" >
-            <RadioButton Content="da" Name="OsnovnaDa" VerticalAlignment="Center"/>
-            <RadioButton Content="ne" Name="OsnovnaNe" VerticalAlignment="Center"/>
-        </StackPanel>
+        <ComboBox Grid.Column="1" Grid.Row="12" VerticalAlignment="Center" Name="osnovnaNamirnicaCombo" ToolTip="Da li proizvod spada u osnovne namirnice" SelectedItem="{Binding Path=OsnovnaNamirnica}" Margin="15"/>
         <TextBox Grid.Column="1" Grid.Row="13" VerticalAlignment="Center" Name="rokTrajanjaTxt" ToolTip="Unesite rok trajanja kao celobrojnu vrednost" Text="{Binding Path= RokTrajanja}" Margin="15" />
         <Button Grid.Column="1" Grid.Row="14" Name="confirm" BorderBrush="#7CFC00"  Background="#7CFC00" Margin="10" Grid.ColumnSpan="2"  Click="buttonConfirm_Click">Potvrdi</Button>
         <!--#endregion-->

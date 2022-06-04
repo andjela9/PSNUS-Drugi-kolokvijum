@@ -15,13 +15,13 @@ namespace Prodavnica
         private double porez;
         private double akciza;
         private string poreklo;
-        private bool vegan;
-        private bool maloletni;
+        private string posno;
+        private string maloletni;
         private double carina;
-        private bool osnovnaNamirnica; 
+        private string osnovnaNamirnica; 
         private int rokTrajanja;
 
-        public Artikal(string naziv, string proizvodjac, double cena, int barKod, double porez, double akciza, string poreklo, bool vegan, bool maloletni, double carina, bool osnovnaNamirnica, int rokTrajanja)
+        public Artikal(string naziv, string proizvodjac, double cena, int barKod, double porez, double akciza, string poreklo, string posno, string maloletni, double carina, string osnovnaNamirnica, int rokTrajanja)
         {
             this.naziv = naziv;
             this.proizvodjac = proizvodjac;
@@ -30,7 +30,7 @@ namespace Prodavnica
             this.porez = porez;
             this.akciza = akciza;
             this.poreklo = poreklo;
-            this.vegan = vegan;
+            this.posno = posno;
             
             this.maloletni = maloletni;
             this.carina = carina;
@@ -75,13 +75,13 @@ namespace Prodavnica
             }
          }
 
-        public bool Vegan
+        public string Posno
         {
-            get { return vegan; }
+            get { return posno; }
             set
             {
-                vegan = value;
-                OnPropertyChanged("Vegan");
+                posno = value;
+                OnPropertyChanged("Posno");
             }
         }
 
@@ -114,7 +114,7 @@ namespace Prodavnica
             }
         }
         
-        public bool Maloletni
+        public string Maloletni
         {
             get
             {
@@ -138,7 +138,7 @@ namespace Prodavnica
                 OnPropertyChanged("Carina");
             }
          }
-        public bool OsnovnaNamirnica
+        public string OsnovnaNamirnica
         {
             get
             {

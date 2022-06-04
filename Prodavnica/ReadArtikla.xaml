@@ -40,7 +40,7 @@
         <TextBlock Grid.Column="0" Grid.Row="5" Text="Porez" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="6" Text="Akciza" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="7" Text="Poreklo" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="8" Text="Vegan" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="8" Text="Posno" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="9" Text="Da li je za maloletne?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="10" Text="Carina" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="11" Text="Da li je osnovna namirnica?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -55,7 +55,7 @@
         <TextBlock Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="porez"  Margin="15" Text="{Binding Path= Porez}"/>
         <TextBlock Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="akciza"  Margin="15" Text="{Binding Path= Akciza}"/>
         <TextBlock Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="poreklo"  Margin="15" Text="{Binding Path= Poreklo}"/>
-        <TextBlock Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="vegan"  Margin="15" />
+        <TextBlock Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="posno"  Margin="15" />
         <TextBlock Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="maloletni"  Margin="15" />
         <TextBlock Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="carina"  Margin="15" Text="{Binding Path= Carina}"/>
         <TextBlock Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" Name="osnovnaNamirnica"  Margin="15" />
