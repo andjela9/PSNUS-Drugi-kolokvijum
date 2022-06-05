@@ -87,7 +87,19 @@ namespace Prodavnica.Prozori_xaml
                 {
                     ArtikalSektorContext.Instance.Sektori.Add(noviSektor);
                 }
-                ArtikalSektorContext.Instance.SaveChanges();
+
+
+                try
+                {
+                    ArtikalSektorContext.Instance.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Unet je sektor sa istim nazivom. Sektor nece biti dodat!", "Greska", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ArtikalSektorContext.Instance.Sektori.Remove(noviSektor);
+
+                }
+                
                 this.Close();
                 
                 
@@ -262,7 +274,7 @@ namespace Prodavnica.Prozori_xaml
                     {
                         brZaposlenihTxt.BorderBrush = Brushes.Red;
                         //ageValTxt.Text = "Age must be positive number!";
-                        brZapVal.Text = "Broj zaposlenih mora biti pozitivan!";
+                        brZapVal.Text = "Broj zaposlenih mora biti pozitivan broj!";
                         //ageValTxt.Visibility = Visibility.Visible;
                         brZapVal.Visibility = Visibility.Visible;
                         retVal = false;
@@ -278,7 +290,7 @@ namespace Prodavnica.Prozori_xaml
                 {
                     brZaposlenihTxt.BorderBrush = Brushes.Red;
                     //ageValTxt.Text = "Only digits allowed (0-9)!";
-                    brZapVal.Text = "Broj zaposlenih mora biti pozitivan!";
+                    brZapVal.Text = "Broj zaposlenih mora biti pozitivan broj!";
                     retVal = false;
                 }
             }
@@ -288,7 +300,7 @@ namespace Prodavnica.Prozori_xaml
             {
                 plataTxt.BorderBrush = Brushes.Red;
                 //plataTxt.Text = "Required field!";
-                plataVal.Text = "Plata mora biti pozitivan broj!";
+                plataVal.Text = "Plata mora biti pozitivan broj broj!";
                 plataVal.Visibility = Visibility.Visible;
                 //ageValTxt.Visibility = Visibility.Visible;
                 retVal = false;
@@ -329,7 +341,7 @@ namespace Prodavnica.Prozori_xaml
             if (String.IsNullOrWhiteSpace(brFrizideraTxt.Text))
             {
                 //brFrizideraTxt.Text = "Required field!";
-                brFrizVal.Text = "Broj frizidera mora biti pozitivan!";
+                brFrizVal.Text = "Frizideri moraju biti broj!";
                 brFrizideraTxt.BorderBrush = Brushes.Red;
                 brFrizVal.Visibility = Visibility.Visible;
                 //ageValTxt.Visibility = Visibility.Visible;
@@ -340,26 +352,27 @@ namespace Prodavnica.Prozori_xaml
                 int brFrizidera;
                 if (Int32.TryParse(brFrizideraTxt.Text, out brFrizidera))
                 {
-                    if (brFrizidera <= 0)
-                    {
-                        brFrizideraTxt.BorderBrush = Brushes.Red;
-                        //ageValTxt.Text = "Age must be positive number!";
-                        brFrizVal.Text = "Broj frizidera mora biti pozitivan!";
-                        //ageValTxt.Visibility = Visibility.Visible;
-                        brFrizVal.Visibility = Visibility.Visible;
-                        retVal = false;
-                    }
-                    else
+                    if(brFrizidera >= 0)
                     {
                         brFrizideraTxt.ClearValue(Border.BorderBrushProperty);
                         //ageValTxt.Visibility = Visibility.Hidden;
                         brFrizVal.Visibility = Visibility.Hidden;
                     }
+                    else 
+                    {
+                        brFrizideraTxt.BorderBrush = Brushes.Red;
+                        //ageValTxt.Text = "Age must be positive number!";
+                        brFrizVal.Text = "Frizideri moraju biti broj!";
+                        //ageValTxt.Visibility = Visibility.Visible;
+                        brFrizVal.Visibility = Visibility.Visible;
+                        retVal = false;
+                    }
+                    
                 }
                 else
                 {
                     brFrizideraTxt.BorderBrush = Brushes.Red;
-                    brFrizVal.Text = "Broj frizidera mora biti pozitivan!";
+                    brFrizVal.Text = "Frizideri moraju biti broj!";
                     //ageValTxt.Text = "Only digits allowed (0-9)!";
                     retVal = false;
                 }
@@ -369,7 +382,7 @@ namespace Prodavnica.Prozori_xaml
             if (String.IsNullOrWhiteSpace(brMenadzeraTxt.Text))
             {
                 //brMenadzeraTxt.Text = "Required field!";
-                brMenadzVal.Text = "Broj menadzera mora biti pozitivan!";
+                brMenadzVal.Text = "Menadzeri moraju biti pozitivan broj!";
                 brMenadzeraTxt.BorderBrush = Brushes.Red;
                 //ageValTxt.Visibility = Visibility.Visible;
                 brMenadzVal.Visibility = Visibility.Visible;
@@ -384,7 +397,7 @@ namespace Prodavnica.Prozori_xaml
                     {
                         brMenadzeraTxt.BorderBrush = Brushes.Red;
                         //ageValTxt.Text = "Age must be positive number!";
-                        brMenadzVal.Text = "Broj menadzera mora biti pozitivan!";
+                        brMenadzVal.Text = "Menadzeri moraju biti pozitivan broj!";
                         //ageValTxt.Visibility = Visibility.Visible;
                         brMenadzVal.Visibility = Visibility.Visible;
                         retVal = false;
@@ -400,7 +413,7 @@ namespace Prodavnica.Prozori_xaml
                 {
                     brMenadzeraTxt.BorderBrush = Brushes.Red;
                     //ageValTxt.Text = "Only digits allowed (0-9)!";
-                    brMenadzVal.Text = "Broj menadzera mora biti pozitivan!";
+                    brMenadzVal.Text = "Menadzeri moraju biti pozitivan broj!";
                     retVal = false;
                 }
             }
@@ -428,7 +441,7 @@ namespace Prodavnica.Prozori_xaml
             if (String.IsNullOrWhiteSpace(zaposlenihUSmeniTxt.Text))
             {
                 //zaposlenihUSmeniTxt.Text = "Required field!";
-                smenaVal.Text = "Broj zaposlenih u smeni mora biti pozitivan!";
+                smenaVal.Text = "Broj zaposlenih u smeni mora biti pozitivan broj!";
                 zaposlenihUSmeniTxt.BorderBrush = Brushes.Red;
                 //ageValTxt.Visibility = Visibility.Visible;
                 smenaVal.Visibility = Visibility.Visible;
@@ -443,7 +456,7 @@ namespace Prodavnica.Prozori_xaml
                     {
                         zaposlenihUSmeniTxt.BorderBrush = Brushes.Red;
                         //ageValTxt.Text = "Age must be positive number!";
-                        smenaVal.Text = "Broj zaposlenih u smeni mora biti pozitivan!";
+                        smenaVal.Text = "Broj zaposlenih u smeni mora biti pozitivan broj!";
                         //ageValTxt.Visibility = Visibility.Visible;
                         smenaVal.Visibility = Visibility.Visible;
                         retVal = false;
@@ -459,7 +472,7 @@ namespace Prodavnica.Prozori_xaml
                 {
                     zaposlenihUSmeniTxt.BorderBrush = Brushes.Red;
                     //ageValTxt.Text = "Only digits allowed (0-9)!";
-                    smenaVal.Text = "Broj zaposlenih u smeni mora biti pozitivan!";
+                    smenaVal.Text = "Broj zaposlenih u smeni mora biti pozitivan broj!";
                     retVal = false;
                 }
             }

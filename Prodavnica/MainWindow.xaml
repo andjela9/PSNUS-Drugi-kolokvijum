@@ -55,7 +55,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <Button Content="Dodaj artikal" Background="#019741"   Click="DodajArtikal_Click" Margin="0,0,10,10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="111"/>
+                    <Button Content="Dodaj artikal" Background="#019741" Height="27" Click="DodajArtikal_Click" Margin="0,0,10, 5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="111"/>
                 </Grid>
 
 
@@ -100,7 +100,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <Button Content="Dodaj sektor" Background="#019741" Click="DodajSektor_Click" Margin="0,0,10,10" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Width="111" Grid.Column="2"/>
+                    <Button Content="Dodaj sektor" Background="#019741" Height="27" Click="DodajSektor_Click" Margin="0,0,10, 5" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Width="111" Grid.Column="2"/>
                 </Grid>
 
             </TabItem>
