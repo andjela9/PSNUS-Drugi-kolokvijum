@@ -252,6 +252,7 @@ namespace Prodavnica
                 //barkodTxt.Text = "Required field!";
                 //ageValTxt.Visibility = Visibility.Visible;
                 barkodVal.Visibility = Visibility.Visible;
+                barkodVal.Text = "Bar-kod mora biti pozitivan broj!";
                 retVal = false;
             }
             else
@@ -262,7 +263,7 @@ namespace Prodavnica
                     if (barkod <= 0)
                     {
                         barkodTxt.BorderBrush = Brushes.Red;
-                        barkodVal.Text = "Bar kod mora biti pozitivan broj!";
+                        barkodVal.Text = "Bar-kod mora biti pozitivan broj!";
                         //ageValTxt.Text = "Age must be positive number!";
                         //ageValTxt.Visibility = Visibility.Visible;
                         barkodVal.Visibility = Visibility.Visible;
@@ -279,6 +280,8 @@ namespace Prodavnica
                 {
                     barkodTxt.BorderBrush = Brushes.Red;
                     //ageValTxt.Text = "Only digits allowed (0-9)!";
+                    barkodVal.Visibility = Visibility.Visible;
+                    barkodVal.Text = "Bar-kod mora biti pozitivan broj!";
                     retVal = false;
                 }
             }

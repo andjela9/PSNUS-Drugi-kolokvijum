@@ -38,7 +38,7 @@
         <TextBlock Grid.Column="0" Grid.Row="2" Text="Sektor" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="3" Text="Proizvodjac" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="4" Text="Cena" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="5" Text="Barkod" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="5" Text="Bar-kod" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="6" Text="Porez" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="7" Text="Akciza" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="8" Text="Poreklo" VerticalAlignment="Center" HorizontalAlignment="Center"/>

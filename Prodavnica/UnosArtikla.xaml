@@ -39,7 +39,7 @@
         <TextBlock Grid.Column="0" Grid.Row="2" Text="Sektor" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="3" Text="Proizvodjac" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="4" Text="Cena" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="5" Text="Barkod" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="5" Text="Bar-kod" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="6" Text="Porez" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="7" Text="Akciza" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="0" Grid.Row="8" Text="Poreklo" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -55,7 +55,7 @@
         <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="nazivTxt" Margin="15" ToolTip="Unesite naziv artikla" Text="{Binding Path= Naziv}" IsReadOnly="{Binding IsUpdate}"/>
         <TextBlock Name="nazivVal" Text="Obavezno polje!" Grid.Row="1" Grid.Column="1" Margin="15, 40, 15, 0" Foreground="Red"  Visibility="Hidden"/>
 
-        <ComboBox Grid.Row="2" Grid.Column="1" Name="SektorListBox" Margin="15" SelectedItem="{Binding Path= NazivSektora}"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" Name="SektorListBox" Margin="15" SelectedItem="{Binding Path= NazivSektora}" ToolTip="Izaberite odgovarajuci sektor"/>
         <TextBlock Name="sektorVal" Text="Obavezno polje!" Grid.Row="2" Grid.Column="1" Margin="15, 45, 15, 0" Foreground="Red" Visibility="Hidden"/>
         <TextBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="proizvodjacTxt" ToolTip="Unesite ime proizvodjaca" Text="{Binding Path= Proizvodjac}" Margin="15"/>
         <TextBlock Name="proizvodjacVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="3"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
@@ -63,7 +63,7 @@
         <TextBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="cenaTxt" ToolTip="Unesite cenu kao pozitivan broj" Text="{Binding Path= Cena}" Margin="15" />
         <TextBlock Name="cenaVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="4"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
 
-        <TextBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="barkodTxt" ToolTip="Unesite barkod kao celobrojnu vrednost" Text="{Binding Path= BarKod}"  Margin="15" />
+        <TextBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="barkodTxt" ToolTip="Unesite bar-kod kao celobrojnu vrednost" Text="{Binding Path= BarKod}"  Margin="15" />
         <TextBlock Name="barkodVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="5"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
 
         <TextBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="porezTxt" ToolTip="Unesite porez kao pozitivan broj" Text="{Binding Path= Porez}" Margin="15" />
