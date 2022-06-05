@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prodavnica.Prozori_xaml"
         mc:Ignorable="d"
-        Name="AddOrUpdate" Title="UnosSektora" Height="800" Width="500">
+        Name="AddOrUpdate" Title="Unos Sektora" Height="800" Width="500">
     <Grid>
         <!--#region Definisanje grida-->
         <Grid.ColumnDefinitions>
@@ -48,15 +48,30 @@
         <!--#endregion-->
         <!--#region Druga kolona-->
         <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="nazivTxt" Margin="15" Text="{Binding Path= NazivSektora}" ToolTip="Unesite naziv sektora"/>
+        <TextBlock Name="nazivVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="1"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
+
         <TextBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Name="idSektoraTxt" Text="{Binding Path= IdSektora}" Margin="15" ToolTip="Unesite ID sektora"/>
+        <TextBlock Name="idVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="2"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
+
         <TextBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="povrsinaTxt" Text="{Binding Path= PovrsinaSektora}" Margin="15" ToolTip="Unesite povrsinu kao pozitivan broj"/>
+        <TextBlock Name="povrsinaVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="3"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
+        
+        
         <TextBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="maxBrArtikalaTxt" Text="{Binding Path= MaxBrojArtikalaSektora}"  Margin="15" ToolTip="Unesite maksimalni broj artikala kao celobrojnu vrednost"/>
+        <TextBlock Name="maxBrVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="4"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
+        
         <TextBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="brZaposlenihTxt" Text="{Binding Path= BrojZaposlenihSektora}" Margin="15" ToolTip="Unesite broj zaposlenih kao celobrojnu vrednost"/>
+        <TextBlock Name="brZapVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="5"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
         <TextBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="plataTxt" Text="{Binding Path= PlataSektora}" Margin="15" ToolTip="Unesite platu kao pozitivan broj"/>
+        <TextBlock Name="plataVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="6"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
         <TextBox Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="brFrizideraTxt" Text="{Binding Path= BrFrizideraSektora}"  Margin="15" ToolTip="Unesite broj frizidera kao celobrojnu vrednost"/>
+        <TextBlock Name="brFrizVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="7"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
         <TextBox Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="brMenadzeraTxt" Text="{Binding Path= BrojMenadzeraSektora}"  Margin="15" ToolTip="Unesite broj menadzera kao celobrojnu vrednost"/>
+        <TextBlock Name="brMenadzVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="8"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
         <TextBox Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="bojaUniformeTxt" Text="{Binding Path= BojaUniforme}"  Margin="15" ToolTip="Unesite boju uniforme"/>
+        <TextBlock Name="uniformaVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="9"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
         <TextBox Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="zaposlenihUSmeniTxt" Text="{Binding Path= ZaposlenihUSmeni}" Margin="15" ToolTip="Unesite broj zaposlenih u smeni kao celobrojnu vrednost"/>
+        <TextBlock Name="smenaVal" Text="Obavezno polje!" Grid.Column="1" Grid.Row="10"  Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden" />
         <Button Grid.Column="1" Grid.Row="13" Name="confirm" BorderBrush="#7CFC00"  Background="#7CFC00" Margin="10" Grid.ColumnSpan="2"  Click="buttonConfirm_Click">Potvrdi</Button>
         <!--#endregion-->
         <!--#region Treca kolona-->

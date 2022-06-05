@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prodavnica.Prozori_xaml"
         mc:Ignorable="d"
-        Title="ReadSektora" Height="800" Width="500">
+        Title="Podaci o sektoru" Height="800" Width="500">
     <Grid>
+        
         <!--#region Definisanje grida-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -64,5 +65,6 @@
         <TextBlock Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Text="kom" Margin="15"/>
         <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center" Text="RSD" Margin="15"/>
         <!--#endregion-->
+       
     </Grid>
 </Window>

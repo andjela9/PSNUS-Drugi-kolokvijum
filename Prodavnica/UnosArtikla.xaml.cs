@@ -131,28 +131,28 @@ namespace Prodavnica
             if (String.IsNullOrWhiteSpace(nazivTxt.Text))
             {
                 nazivTxt.BorderBrush = Brushes.Red;
-                //indexValTxt.Visibility = Visibility.Visible;
+                nazivVal.Visibility = Visibility.Visible;
 
                 retVal = false;
             }
             else
             {
                 nazivTxt.ClearValue(Border.BorderBrushProperty);
-                //indexValTxt.Visibility = Visibility.Hidden;
+                nazivVal.Visibility = Visibility.Hidden;
             }
 
             // validacija polja proizvodjac
             if (String.IsNullOrWhiteSpace(proizvodjacTxt.Text))
             {
                 proizvodjacTxt.BorderBrush = Brushes.Red;
-                //firstNameValTxt.Visibility = Visibility.Visible;
+                proizvodjacVal.Visibility = Visibility.Visible;
 
                 retVal = false;
             }
             else
             {
                 proizvodjacTxt.ClearValue(Border.BorderBrushProperty);
-                //firstNameValTxt.Visibility = Visibility.Hidden;
+                proizvodjacVal.Visibility = Visibility.Hidden;
             }
 
 
@@ -161,11 +161,13 @@ namespace Prodavnica
             {
                 retVal = false;
                 //posnoCombo.BorderBrush = Brushes.Red;
+                posnoVal.Visibility = Visibility.Visible;
                 posnoCombo.ClearValue(Border.BorderBrushProperty);
             }
             else
             {
                 //posnoCombo.BorderBrush = Brushes.Black;
+                posnoVal.Visibility = Visibility.Hidden;
                 posnoCombo.ClearValue(Border.BorderBrushProperty);
             }
 
@@ -173,22 +175,25 @@ namespace Prodavnica
             if(SektorListBox.SelectedIndex == -1)
             {
                 retVal = false;
-
+                sektorVal.Visibility = Visibility.Visible;
             }
             else
             {
                 SektorListBox.ClearValue(Border.BorderBrushProperty);
+                sektorVal.Visibility = Visibility.Hidden;
             }
 
             //validacija maloletni
             if (maloletniCombo.SelectedIndex == -1)
             {
                 retVal = false;
+                maloletniVal.Visibility = Visibility.Visible;
                 maloletniCombo.BorderBrush = Brushes.Red;
             }
             else
             {
                 posnoCombo.BorderBrush = Brushes.Black;
+                maloletniVal.Visibility = Visibility.Hidden;
             }
 
             //validacija osnovna namirnica
@@ -196,18 +201,21 @@ namespace Prodavnica
             {
                 retVal = false;
                 osnovnaNamirnicaCombo.BorderBrush = Brushes.Red;
+                osnovnaVal.Visibility = Visibility.Visible;
             }
             else
             {
                 osnovnaNamirnicaCombo.BorderBrush = Brushes.Black;
+                osnovnaVal.Visibility = Visibility.Hidden;
             }
 
             //validacija polja cena
             if (String.IsNullOrWhiteSpace(cenaTxt.Text))
             {
-                //cenaTxt.Text = "Required field!";
-                //ageValTxt.Visibility = Visibility.Visible;
+                cenaTxt.BorderBrush = Brushes.Red;
+                cenaVal.Visibility = Visibility.Visible;
                 retVal = false;
+
             }
             else
             {
@@ -217,13 +225,15 @@ namespace Prodavnica
                     if (cena <= 0)
                     { 
                         cenaTxt.BorderBrush = Brushes.Red;
-                        //ageValTxt.Text = "Age must be positive number!";
+                        cenaVal.Visibility = Visibility.Visible;
+                        cenaVal.Text = "Cena mora biti pozitivan broj!";
                         //ageValTxt.Visibility = Visibility.Visible;
                         retVal = false;
                     }
                     else
                     {
                         cenaTxt.ClearValue(Border.BorderBrushProperty);
+                        cenaVal.Visibility = Visibility.Hidden;
                         //ageValTxt.Visibility = Visibility.Hidden;
                     }
                 }
@@ -231,6 +241,7 @@ namespace Prodavnica
                 {
                     cenaTxt.BorderBrush = Brushes.Red;
                     //ageValTxt.Text = "Only digits allowed (0-9)!";
+                    cenaVal.Text = "Cena mora biti pozitivan broj!";
                     retVal = false;
                 }
             }
@@ -240,6 +251,7 @@ namespace Prodavnica
             {
                 //barkodTxt.Text = "Required field!";
                 //ageValTxt.Visibility = Visibility.Visible;
+                barkodVal.Visibility = Visibility.Visible;
                 retVal = false;
             }
             else
@@ -250,14 +262,17 @@ namespace Prodavnica
                     if (barkod <= 0)
                     {
                         barkodTxt.BorderBrush = Brushes.Red;
+                        barkodVal.Text = "Bar kod mora biti pozitivan broj!";
                         //ageValTxt.Text = "Age must be positive number!";
                         //ageValTxt.Visibility = Visibility.Visible;
+                        barkodVal.Visibility = Visibility.Visible;
                         retVal = false;
                     }
                     else
                     {
                         barkodTxt.ClearValue(Border.BorderBrushProperty);
                         //ageValTxt.Visibility = Visibility.Hidden;
+                        barkodVal.Visibility = Visibility.Hidden;
                     }
                 }
                 else
@@ -272,8 +287,8 @@ namespace Prodavnica
             // validacija polja porez
             if (String.IsNullOrWhiteSpace(porezTxt.Text))
             {
-                porezTxt.Text = "Required field!";
-                //ageValTxt.Visibility = Visibility.Visible;
+                porekloTxt.BorderBrush = Brushes.Red;
+                porezVal.Visibility = Visibility.Visible;
                 retVal = false;
             }
             else
@@ -284,20 +299,23 @@ namespace Prodavnica
                     if (porez <= 0)
                     {
                         porezTxt.BorderBrush = Brushes.Red;
-                        //ageValTxt.Text = "Age must be positive number!";
+                        porezVal.Visibility = Visibility.Visible;
+                        porezVal.Text = "Porez mora biti pozitivan broj!";
                         //ageValTxt.Visibility = Visibility.Visible;
+                        
                         retVal = false;
                     }
                     else
                     {
                         porezTxt.ClearValue(Border.BorderBrushProperty);
-                        //ageValTxt.Visibility = Visibility.Hidden;
+                        porezVal.Visibility = Visibility.Hidden;
                     }
                 }
                 else
                 {
                     porezTxt.BorderBrush = Brushes.Red;
                     //ageValTxt.Text = "Only digits allowed (0-9)!";
+                    porezVal.Text = "Porez mora biti pozitivan broj!";
                     retVal = false;
                 }
             }
@@ -306,7 +324,8 @@ namespace Prodavnica
             // validacija polja akciza
             if (String.IsNullOrWhiteSpace(akcizaTxt.Text))
             {
-                akcizaTxt.Text = "Required field!";
+                akcizaTxt.BorderBrush = Brushes.Red;
+                akcizaVal.Visibility = Visibility.Visible;
                 //ageValTxt.Visibility = Visibility.Visible;
                 retVal = false;
             }
@@ -318,6 +337,8 @@ namespace Prodavnica
                     if (akciza <= 0)
                     {
                         akcizaTxt.BorderBrush = Brushes.Red;
+                        akcizaVal.Visibility = Visibility.Visible;
+                        akcizaVal.Text = "Akciza mora biti pozitivan broj!";
                         //ageValTxt.Text = "Age must be positive number!";
                         //ageValTxt.Visibility = Visibility.Visible;
                         retVal = false;
@@ -325,12 +346,14 @@ namespace Prodavnica
                     else
                     {
                         akcizaTxt.ClearValue(Border.BorderBrushProperty);
+                        akcizaVal.Visibility = Visibility.Hidden;
                         //ageValTxt.Visibility = Visibility.Hidden;
                     }
                 }
                 else
                 {
                     akcizaTxt.BorderBrush = Brushes.Red;
+                    akcizaVal.Text = "Akciza mora biti pozitivan broj!";
                     //ageValTxt.Text = "Only digits allowed (0-9)!";
                     retVal = false;
                 }
@@ -341,22 +364,23 @@ namespace Prodavnica
             if (String.IsNullOrWhiteSpace(porekloTxt.Text))
             {
                 porekloTxt.BorderBrush = Brushes.Red;
-                //lastNameValTxt.Visibility = Visibility.Visible;
+                porekloVal.Visibility = Visibility.Visible;
 
                 retVal = false;
             }
             else
             {
                 porekloTxt.ClearValue(Border.BorderBrushProperty);
-                //lastNameValTxt.Visibility = Visibility.Hidden;
+                porekloVal.Visibility = Visibility.Hidden;
             }
 
 
             // validacija polja carina
             if (String.IsNullOrWhiteSpace(carinaTxt.Text))
             {
-                carinaTxt.Text = "Required field!";
-                //ageValTxt.Visibility = Visibility.Visible;
+                carinaTxt.Text = "Obavezno polje!";
+                carinaTxt.BorderBrush = Brushes.Red;
+                carinaVal.Visibility = Visibility.Visible;
                 retVal = false;
             }
             else
@@ -368,18 +392,21 @@ namespace Prodavnica
                     {
                         carinaTxt.BorderBrush = Brushes.Red;
                         //ageValTxt.Text = "Age must be positive number!";
-                        //ageValTxt.Visibility = Visibility.Visible;
+                        carinaVal.Text = "Carina mora biti pozitivan broj";
+                        carinaVal.Visibility = Visibility.Visible;
                         retVal = false;
                     }
                     else
                     {
                         carinaTxt.ClearValue(Border.BorderBrushProperty);
+                        carinaVal.Visibility = Visibility.Hidden;
                         //ageValTxt.Visibility = Visibility.Hidden;
                     }
                 }
                 else
                 {
                     carinaTxt.BorderBrush = Brushes.Red;
+                    carinaVal.Text = "Carina mora biti pozitivan broj!";
                     //ageValTxt.Text = "Only digits allowed (0-9)!";
                     retVal = false;
                 }
@@ -388,8 +415,9 @@ namespace Prodavnica
             // validacija polja rok trajanja
             if (String.IsNullOrWhiteSpace(rokTrajanjaTxt.Text))
             {
-                rokTrajanjaTxt.Text = "Required field!";
+                rokTrajanjaTxt.Text = "Obavezno polje";
                 //ageValTxt.Visibility = Visibility.Visible;
+                rokVal.Visibility = Visibility.Visible;
                 retVal = false;
             }
             else
@@ -401,19 +429,23 @@ namespace Prodavnica
                     {
                         rokTrajanjaTxt.BorderBrush = Brushes.Red;
                         //ageValTxt.Text = "Age must be positive number!";
+                        rokVal.Text = "Rok trajanja mora biti pozitivan broj!";
                         //ageValTxt.Visibility = Visibility.Visible;
+                        rokVal.Visibility = Visibility.Visible;
                         retVal = false;
                     }
                     else
                     {
                         rokTrajanjaTxt.ClearValue(Border.BorderBrushProperty);
                         //ageValTxt.Visibility = Visibility.Hidden;
+                        rokVal.Visibility = Visibility.Hidden;
                     }
                 }
                 else
                 {
                     rokTrajanjaTxt.BorderBrush = Brushes.Red;
                     //ageValTxt.Text = "Only digits allowed (0-9)!";
+                    rokVal.Text = "Rok trajanja mora biti broj!";
                     retVal = false;
                 }
             }
