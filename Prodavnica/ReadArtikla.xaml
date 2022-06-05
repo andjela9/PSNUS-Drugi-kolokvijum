@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Prodavnica"
         mc:Ignorable="d"
         Title="Podaci o artiklu" Height="900" Width="500">
-    <Grid>
+    <Grid >
         <!--#region Definisanje grida-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -27,6 +27,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition Height="0.8*"/>
         </Grid.RowDefinitions>
         <!--#endregion-->
@@ -34,41 +35,43 @@
         <Rectangle Grid.Row="0" Fill="#89CFF0" Grid.ColumnSpan="3" />
         <TextBlock Grid.Column="0" Grid.Row="0" Text="Podaci o artiklu" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3" FontWeight="Bold"/>
         <TextBlock Grid.Column="0" Grid.Row="1" Text="Naziv" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="2" Text="Proizvodjac" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="3" Text="Cena" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="4" Text="Barkod" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="5" Text="Porez" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="6" Text="Akciza" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="7" Text="Poreklo" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="8" Text="Posno" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="9" Text="Da li je za maloletne?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="10" Text="Carina" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="11" Text="Da li je osnovna namirnica?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Column="0" Grid.Row="12" Text="Rok trajanja" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="Sektor" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="Proizvodjac" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="Cena" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="5" Text="Barkod" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="6" Text="Porez" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="7" Text="Akciza" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="8" Text="Poreklo" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="9" Text="Posno" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="10" Text="Da li je za maloletne?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="11" Text="Carina" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="12" Text="Da li je osnovna namirnica?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Column="0" Grid.Row="13" Text="Rok trajanja" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         
         <!--#endregion-->
         <!--#region Druga kolona-->
         <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="naziv" Margin="15" Text="{Binding Path= Naziv}"/>
-        <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Name="proizvodjac"  Margin="15" Text="{Binding Path= Proizvodjac}"/>
-        <TextBlock Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="cena"  Margin="15" Text="{Binding Path= Cena}"/>
-        <TextBlock Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="barkod"  Margin="15" Text="{Binding Path= BarKod}"/>
-        <TextBlock Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="porez"  Margin="15" Text="{Binding Path= Porez}"/>
-        <TextBlock Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="akciza"  Margin="15" Text="{Binding Path= Akciza}"/>
-        <TextBlock Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="poreklo"  Margin="15" Text="{Binding Path= Poreklo}"/>
-        <TextBlock Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="posno"  Margin="15" Text="{Binding Path= Posno}"/>
-        <TextBlock Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="maloletni"  Margin="15" Text="{Binding Path= Maloletni}"/>
-        <TextBlock Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="carina"  Margin="15" Text="{Binding Path= Carina}"/>
-        <TextBlock Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" Name="osnovnaNamirnica"  Margin="15" Text="{Binding Path= OsnovnaNamirnica}"/>
-        <TextBlock Grid.Column="1" Grid.Row="12" VerticalAlignment="Center" Name="rokTrajanja"  Margin="15" Text="{Binding Path= RokTrajanja}"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Name="nazivSektora" Margin="15" Text="{Binding Path= NazivSektora}"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="proizvodjac"  Margin="15" Text="{Binding Path= Proizvodjac}"/>
+        <TextBlock Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="cena"  Margin="15" Text="{Binding Path= Cena}"/>
+        <TextBlock Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="barkod"  Margin="15" Text="{Binding Path= BarKod}"/>
+        <TextBlock Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="porez"  Margin="15" Text="{Binding Path= Porez}"/>
+        <TextBlock Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="akciza"  Margin="15" Text="{Binding Path= Akciza}"/>
+        <TextBlock Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="poreklo"  Margin="15" Text="{Binding Path= Poreklo}"/>
+        <TextBlock Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="posno"  Margin="15" Text="{Binding Path= Posno}"/>
+        <TextBlock Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="maloletni"  Margin="15" Text="{Binding Path= Maloletni}"/>
+        <TextBlock Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" Name="carina"  Margin="15" Text="{Binding Path= Carina}"/>
+        <TextBlock Grid.Column="1" Grid.Row="12" VerticalAlignment="Center" Name="osnovnaNamirnica"  Margin="15" Text="{Binding Path= OsnovnaNamirnica}"/>
+        <TextBlock Grid.Column="1" Grid.Row="13" VerticalAlignment="Center" Name="rokTrajanja"  Margin="15" Text="{Binding Path= RokTrajanja}"/>
         <!--#endregion-->
         <!--#region Treca kolona-->
-        <TextBlock Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Text="RSD" Margin="15"/>
-        <TextBlock Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Text="%" Margin="15"/>
+        <TextBlock Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Text="RSD" Margin="15"/>
         <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center" Text="%" Margin="15"/>
-        <TextBlock Grid.Column="2" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center" Text="%" Margin="15"/>
-        <TextBlock Grid.Column="2" Grid.Row="12" VerticalAlignment="Center" HorizontalAlignment="Center" Text="dan(a)" Margin="15"/>
+        <TextBlock Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" Text="%" Margin="15"/>
+        <TextBlock Grid.Column="2" Grid.Row="11" VerticalAlignment="Center" HorizontalAlignment="Center" Text="%" Margin="15"/>
+        <TextBlock Grid.Column="2" Grid.Row="13" VerticalAlignment="Center" HorizontalAlignment="Center" Text="dan(a)" Margin="15"/>
 
-        <Button Grid.Column="0" Grid.Row="13" Name="OK"  Grid.ColumnSpan="3" Margin="100, 10" Click="buttonUredu_Click" BorderBrush="#7CFC00" Background="#7CFC00" >U redu</Button>
+        <Button Grid.Column="0" Grid.Row="14" Name="OK"  Grid.ColumnSpan="3" Margin="100, 10" Click="buttonUredu_Click" BorderBrush="#7CFC00" Background="#7CFC00" >U redu</Button>
         <!--#endregion-->
 
 

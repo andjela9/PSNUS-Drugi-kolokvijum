@@ -20,6 +20,7 @@ namespace Prodavnica
     {
         private Artikal noviArtikal = new Artikal();
         public bool IsUpdate { get; set; }
+        
         public UnosArtikla(Artikal unetArtikal)
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace Prodavnica
                 noviArtikal.Proizvodjac = unetArtikal.Proizvodjac;
                 noviArtikal.Posno = unetArtikal.Posno;
                 noviArtikal.RokTrajanja = unetArtikal.RokTrajanja;
+                noviArtikal.NazivSektora = unetArtikal.NazivSektora;
 
                 AddOrUpdate.Title = "Azuriranje artikla";
                 IsUpdate = true;
@@ -78,18 +80,18 @@ namespace Prodavnica
                     Artikal updateArtikal = ArtikalSektorContext.Instance.Artikli.SingleOrDefault(art => art.Naziv == noviArtikal.Naziv);               //onaj objekat ciji je naziv isti
                     if(updateArtikal != null)
                     {
-                        updateArtikal.Naziv = noviArtikal.Naziv;
-                        updateArtikal.BarKod = noviArtikal.BarKod;
-                        updateArtikal.Akciza = noviArtikal.Akciza;
-                        updateArtikal.Carina = noviArtikal.Carina;
-                        updateArtikal.Cena = noviArtikal.Cena;
-                        updateArtikal.Maloletni = noviArtikal.Maloletni;
-                        updateArtikal.OsnovnaNamirnica = noviArtikal.OsnovnaNamirnica;
-                        updateArtikal.Poreklo = noviArtikal.Poreklo;
-                        updateArtikal.Porez = noviArtikal.Porez;
-                        updateArtikal.Proizvodjac = noviArtikal.Proizvodjac;
-                        updateArtikal.Posno = noviArtikal.Posno;
-                        updateArtikal.RokTrajanja = noviArtikal.RokTrajanja;
+                        MainWindow.SelectedArtikal.Naziv = noviArtikal.Naziv;
+                        MainWindow.SelectedArtikal.BarKod = noviArtikal.BarKod;
+                        MainWindow.SelectedArtikal.Akciza = noviArtikal.Akciza;
+                        MainWindow.SelectedArtikal.Carina = noviArtikal.Carina;
+                        MainWindow.SelectedArtikal.Cena = noviArtikal.Cena;
+                        MainWindow.SelectedArtikal.Maloletni = noviArtikal.Maloletni;
+                        MainWindow.SelectedArtikal.OsnovnaNamirnica = noviArtikal.OsnovnaNamirnica;
+                        MainWindow.SelectedArtikal.Poreklo = noviArtikal.Poreklo;
+                        MainWindow.SelectedArtikal.Porez = noviArtikal.Porez;
+                        MainWindow.SelectedArtikal.Posno = noviArtikal.Posno;
+                        MainWindow.SelectedArtikal.RokTrajanja = noviArtikal.RokTrajanja;
+                        MainWindow.SelectedArtikal.NazivSektora = noviArtikal.NazivSektora;
 
                         ArtikalSektorContext.Instance.Entry(updateArtikal).State = System.Data.Entity.EntityState.Modified;     //da se zna da je apdejtovano stanje objekta unutar baze
                     }
@@ -165,6 +167,17 @@ namespace Prodavnica
             {
                 //posnoCombo.BorderBrush = Brushes.Black;
                 posnoCombo.ClearValue(Border.BorderBrushProperty);
+            }
+
+            //validacija sektora
+            if(SektorListBox.SelectedIndex == -1)
+            {
+                retVal = false;
+
+            }
+            else
+            {
+                SektorListBox.ClearValue(Border.BorderBrushProperty);
             }
 
             //validacija maloletni

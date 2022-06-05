@@ -53,7 +53,7 @@
         <!--#endregion-->
         <!--#region Druga kolona-->
         <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="nazivTxt" Margin="15" ToolTip="Unesite naziv artikla" Text="{Binding Path= Naziv}" IsReadOnly="{Binding IsUpdate}"/>
-        <ListBox Grid.Row="2" Grid.Column="1" Name="SektorListBox" Margin="15" SelectedItem="{Binding Path= NazivSektora}"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" Name="SektorListBox" Margin="15" SelectedItem="{Binding Path= NazivSektora}"/>
         <TextBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="proizvodjacTxt" ToolTip="Unesite ime proizvodjaca" Text="{Binding Path= Proizvodjac}" Margin="15"/>
         <TextBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="cenaTxt" ToolTip="Unesite cenu kao pozitivan broj" Text="{Binding Path= Cena}" Margin="15" />
         <TextBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="barkodTxt" ToolTip="Unesite barkod kao celobrojnu vrednost" Text="{Binding Path= BarKod}"  Margin="15" />

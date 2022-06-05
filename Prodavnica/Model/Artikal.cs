@@ -22,8 +22,7 @@ namespace Prodavnica
         private string osnovnaNamirnica; 
         private int rokTrajanja;
         private string nazivSektora;
-        //private List<Sektor> sektori;     ovo ne treba
-
+        
 
         public Artikal(string naziv, string proizvodjac, double cena, int barKod, double porez, double akciza, string poreklo, string posno, string maloletni, double carina, string osnovnaNamirnica, int rokTrajanja, string nazivSektora)
         {
@@ -59,7 +58,7 @@ namespace Prodavnica
             }
             
         }
-        //TODO za sektor
+        
      
         [ForeignKey("Sektor")]
         public string NazivSektora { 

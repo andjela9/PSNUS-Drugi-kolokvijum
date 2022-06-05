@@ -23,7 +23,7 @@ namespace Prodavnica
     public partial class MainWindow : Window
     {
 
-        public Artikal SelectedArtikal { get; set; }
+        public static Artikal SelectedArtikal { get; set; }
         public Sektor SelectedSektor { get; set; }
         public MainWindow()
         {
