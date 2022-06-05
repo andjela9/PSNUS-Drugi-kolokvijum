@@ -55,10 +55,10 @@
         <TextBlock Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="porez"  Margin="15" Text="{Binding Path= Porez}"/>
         <TextBlock Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="akciza"  Margin="15" Text="{Binding Path= Akciza}"/>
         <TextBlock Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="poreklo"  Margin="15" Text="{Binding Path= Poreklo}"/>
-        <TextBlock Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="posno"  Margin="15" />
-        <TextBlock Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="maloletni"  Margin="15" />
+        <TextBlock Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="posno"  Margin="15" Text="{Binding Path= Posno}"/>
+        <TextBlock Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="maloletni"  Margin="15" Text="{Binding Path= Maloletni}"/>
         <TextBlock Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Name="carina"  Margin="15" Text="{Binding Path= Carina}"/>
-        <TextBlock Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" Name="osnovnaNamirnica"  Margin="15" />
+        <TextBlock Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" Name="osnovnaNamirnica"  Margin="15" Text="{Binding Path= OsnovnaNamirnica}"/>
         <TextBlock Grid.Column="1" Grid.Row="12" VerticalAlignment="Center" Name="rokTrajanja"  Margin="15" Text="{Binding Path= RokTrajanja}"/>
         <!--#endregion-->
         <!--#region Treca kolona-->

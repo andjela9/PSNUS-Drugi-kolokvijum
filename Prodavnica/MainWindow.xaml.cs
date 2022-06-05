@@ -22,6 +22,7 @@ namespace Prodavnica
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public Artikal SelectedArtikal { get; set; }
         public Sektor SelectedSektor { get; set; }
         public MainWindow()
@@ -34,11 +35,31 @@ namespace Prodavnica
             ArtikalSektorContext.Instance.Sektori.Load();
             sektoriGrid.ItemsSource = ArtikalSektorContext.Instance.Sektori.Local;
             this.DataContext = this;
+            
+            
+            
+            
             //load sektora isto ovako
 
             //LoadData();
 
             //view - SQL server object explorer
+
+            //using(var db = new ArtikalSektorContext())
+            //{
+            //    Console.WriteLine("Adding some authors into database...");
+            //    Sektor sektor1 = new Sektor("Voce", 15, 100, 80, 1, 50000, 4, 3, "zuta", 3);
+            //    Sektor sektor2 = new Sektor("Povrce", 10, 70, 99, 2, 55000, 3, 2, "zelena", 2);
+
+            //    db.Sektori.Add(sektor1);
+            //    db.Sektori.Add(sektor2);
+            //    db.SaveChanges();
+            //}
+
+            //using(var db = new ArtikalSektorContext())
+            //{
+            //    Console.WriteLine("");
+            //}
             
         }
         private void DetailsBtn_Click(object sender, RoutedEventArgs e)

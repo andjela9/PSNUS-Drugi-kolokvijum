@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prodavnica"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="Dobrodosli u prodavnicu!" Height="500" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -29,7 +29,7 @@
                     <DataGrid Name="artikliGrid" SelectedItem="{Binding SelectedArtikal}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False"  Grid.Row="1" Grid.Column="1" Margin="0, 0, 0, 40" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}" Width="1*"/>
-                            <DataGridTextColumn Header="Sektor"  Width="1*"/>
+                            <DataGridTextColumn Header="Sektor" Binding="{Binding NazivSektora}" Width="1*"/>
                             <DataGridTextColumn Header="Bar kod" Binding="{Binding BarKod}" Width="1*"/>
                             <DataGridTextColumn Header="Cena" Binding="{Binding Cena}" Width="1*"/>
                             <DataGridTextColumn Header="Porez" Binding="{Binding Porez}" Width="1*"/>

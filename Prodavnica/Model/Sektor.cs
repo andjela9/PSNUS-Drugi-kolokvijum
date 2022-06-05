@@ -19,9 +19,10 @@ namespace Prodavnica
         private string bojaUniformeSektora;
         private int zaposlenihUSmeniSektora;
 
+
         public Sektor(string naziv, int brojZaposlenih, double povrsina, int maxBrojArtikala, int idSektora, double plata, int brFrizidera, int brojMenadzera, string bojaUniforme, int zaposlenihUSmeni)
         {
-            this.nazivSektora = naziv;
+            this.nazivSektora = naziv;      //posto je kljuc ne bi trebalo, baza popunjava
             this.brojZaposlenihSektora = brojZaposlenih;
             this.povrsinaSektora = povrsina;
             this.maxBrojArtikalaSektora = maxBrojArtikala;
@@ -31,6 +32,7 @@ namespace Prodavnica
             this.brojMenadzeraSektora = brojMenadzera;
             this.bojaUniformeSektora = bojaUniforme;
             this.zaposlenihUSmeniSektora = zaposlenihUSmeni;
+            //baza je zaduzena za loadovanje artikala
         }
         public Sektor() { }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -49,6 +51,9 @@ namespace Prodavnica
                 OnPropertyChanged("NazivSektora");
             }
         }
+
+        public virtual List<Artikal> Artikli { get; set; }
+
         public int BrojZaposlenihSektora
         {
             get{ return brojZaposlenihSektora; }

@@ -41,10 +41,10 @@ namespace Prodavnica
                 noviArtikal.Posno = unetArtikal.Posno;
                 noviArtikal.RokTrajanja = unetArtikal.RokTrajanja;
 
-                AddOrUpdate.Title = "Update artikla";
+                AddOrUpdate.Title = "Azuriranje artikla";
                 IsUpdate = true;
                 nazivTxt.IsReadOnly = true;
-                Zaglavlje.Text = "Update postojeceg artikla";
+                Zaglavlje.Text = "Azuriranje postojeceg artikla";
             }
             else
             {
@@ -59,10 +59,14 @@ namespace Prodavnica
             this.posnoCombo.ItemsSource = new List<String> { "DA", "NE", "NEPOZNATO"};
             this.maloletniCombo.ItemsSource = new List<String> { "DA", "NE" };
             this.osnovnaNamirnicaCombo.ItemsSource = new List<String> { "DA", "NE" };
-
-
-
-
+            
+            var sektori = ArtikalSektorContext.Instance.Sektori.Local;
+            List<String> naziviSektora = new List<string>();
+            foreach(var sektor in sektori)
+            {
+                naziviSektora.Add(sektor.NazivSektora);
+            }
+            this.SektorListBox.ItemsSource = naziviSektora;
         }
 
         private void buttonConfirm_Click(object sender, RoutedEventArgs e)
@@ -102,6 +106,7 @@ namespace Prodavnica
                 catch (Exception)
                 {
                     MessageBox.Show("Unet je artikal sa istim nazivom. Artikal nece biti dodat!", "Greska", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ArtikalSektorContext.Instance.Artikli.Remove(noviArtikal);
                     
                 }
                 this.Close();
@@ -148,13 +153,6 @@ namespace Prodavnica
                 //firstNameValTxt.Visibility = Visibility.Hidden;
             }
 
-           // if(VeganDa.IsChecked == false && VeganNe.IsChecked == false)
-           // {
-            //    VeganDa.BorderBrush = Brushes.Red;
-            //    VeganNe.BorderBrush = Brushes.Red;
-                
-            //    retVal = false;
-           // }
 
             //validacija posno
             if(posnoCombo.SelectedIndex == -1)
@@ -194,7 +192,7 @@ namespace Prodavnica
             //validacija polja cena
             if (String.IsNullOrWhiteSpace(cenaTxt.Text))
             {
-                cenaTxt.Text = "Required field!";
+                //cenaTxt.Text = "Required field!";
                 //ageValTxt.Visibility = Visibility.Visible;
                 retVal = false;
             }
@@ -227,7 +225,7 @@ namespace Prodavnica
             //validacija polja barkod
             if (String.IsNullOrWhiteSpace(barkodTxt.Text))
             {
-                barkodTxt.Text = "Required field!";
+                //barkodTxt.Text = "Required field!";
                 //ageValTxt.Visibility = Visibility.Visible;
                 retVal = false;
             }

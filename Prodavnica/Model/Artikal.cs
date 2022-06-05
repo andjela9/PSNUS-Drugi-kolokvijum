@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Prodavnica
@@ -20,8 +21,11 @@ namespace Prodavnica
         private double carina;
         private string osnovnaNamirnica; 
         private int rokTrajanja;
+        private string nazivSektora;
+        //private List<Sektor> sektori;     ovo ne treba
 
-        public Artikal(string naziv, string proizvodjac, double cena, int barKod, double porez, double akciza, string poreklo, string posno, string maloletni, double carina, string osnovnaNamirnica, int rokTrajanja)
+
+        public Artikal(string naziv, string proizvodjac, double cena, int barKod, double porez, double akciza, string poreklo, string posno, string maloletni, double carina, string osnovnaNamirnica, int rokTrajanja, string nazivSektora)
         {
             this.naziv = naziv;
             this.proizvodjac = proizvodjac;
@@ -31,11 +35,12 @@ namespace Prodavnica
             this.akciza = akciza;
             this.poreklo = poreklo;
             this.posno = posno;
-            
             this.maloletni = maloletni;
             this.carina = carina;
             this.osnovnaNamirnica = osnovnaNamirnica;
             this.rokTrajanja = rokTrajanja;
+            this.nazivSektora = nazivSektora;
+            //onaj virtual Sektor Sektor setuje baza
         }
         public Artikal() { }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -55,6 +60,18 @@ namespace Prodavnica
             
         }
         //TODO za sektor
+     
+        [ForeignKey("Sektor")]
+        public string NazivSektora { 
+            get { return nazivSektora; }
+            set
+            {
+                nazivSektora = value;
+                OnPropertyChanged("NazivSektora");
+            }
+        }
+       
+        public virtual Sektor Sektor { get; set; }
         
         public double Cena
         {
